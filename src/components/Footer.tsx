@@ -5,7 +5,7 @@
 
 import { CompanyInfo, PrivacyPolicyConfig } from '../types';
 import { Mail, Phone, MapPin, Building2, User, HelpCircle, FileText, Check, Copy, ChevronDown, ChevronUp, Scale } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface FooterProps {
   company: CompanyInfo;
@@ -15,11 +15,70 @@ interface FooterProps {
 export function Footer({ company, privacy }: FooterProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [showFullPrivacy, setShowFullPrivacy] = useState(false);
+  const [showMacherwerkPrivacy, setShowMacherwerkPrivacy] = useState(false);
+  const [copiedPrivacyText, setCopiedPrivacyText] = useState(false);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#datenschutz-macherwerk') {
+        setShowMacherwerkPrivacy(true);
+        setTimeout(() => {
+          document.getElementById('macherwerk-privacy-section')?.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(company.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const copyMacherwerkPrivacyText = () => {
+    const privacyText = `Datenschutzerklärung für die Android-App "Macherwerk"
+(Package-ID: de.gridwerk.macherwerk)
+
+1. Präambel & Verantwortliche Stelle
+Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Entwickler auf:
+
+Entwickler & Verantwortliche Stelle:
+Özgür Kilincer
+Gridwerk Softwareentwicklung
+Am Birket 1, 86650 Wemding, Deutschland
+E-Mail: Kilincer@outlook.com
+Tel: 01718484211
+Umsatzsteuer-Identifikationsnummer: DE268563088
+
+2. Grundprinzipien: Offline-First & Datensparsamkeit
+Die App "Macherwerk" ist als reine Offline-Anwendung konzipiert.
+- Lokalität: Alle von Ihnen erfassten Nahrungsmittel, Mahlzeiten, Kalorien, Nährwertprofile, Gewichtseinträge sowie freie Texteinträge werden ausschließlich auf Ihrem eigenen Speicherplatz in einer lokalen SQLite-Datenbank Ihres Android-Smartphones abgespeichert.
+- Keine Server-Übertragung: Es findet keine automatische Übertragung oder Synchronisation auf Cloud-Hoster, Webserver oder externe Netzwerke statt.
+- Kein Account-Zwang: Sie können die App verwenden, ohne ein Benutzerkonto anzulegen.
+
+3. Kamera-Berechtigung (Foto-Nährwertanalyse via On-Device AI)
+Zur optionalen Foto-Erkennung von Lebensmitteln benötigt die App Zugriff auf die Kamera Ihres Mobilgeräts.
+- Zweck: Aufnahme der Speise zur sofortigen grafischen Interpretation der Essensportionen.
+- On-Device KI: Die gesamte Fotoauswertung, Segmentierung und Nährwertzuordnung wird lokal auf Ihrem Smartphone (On-Device AI) verarbeitet. Es findet kein Upload des Fotos an externe Web-Server oder externe LLM-Systeme statt. Das Foto wird nach dem Erkennungsvorgang unmittelbar wieder verworfen.
+
+4. Keine Weitergabe an Dritte & Keine Werbe- oder Analyse-Tracker
+- Die App bindet keinerlei Werbenetzwerke (wie Google AdMob) oder Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
+- Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
+
+5. Rechte des Nutzers (Auskunft und vollständige Löschung)
+Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
+- Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
+
+6. Version und Stand der Erklärung
+Stand: 05. Juni 2026 / Version 1.0.0`;
+
+    navigator.clipboard.writeText(privacyText);
+    setCopiedPrivacyText(true);
+    setTimeout(() => setCopiedPrivacyText(false), 2000);
   };
 
   return (
@@ -175,21 +234,47 @@ export function Footer({ company, privacy }: FooterProps) {
               Die von uns im Google Play Store bereitgestellten mobilen Apps erheben im Regelfall keinerlei verhaltensbezogenen Analysedaten im Hintergrund. Sollte eine App zur Erfüllung ihrer Kernfunktionen systemspezifische Sensortaten oder Standortdienste benötigen, fragen wir dies explizit ab.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
               <button
                 type="button"
                 onClick={() => setShowFullPrivacy(!showFullPrivacy)}
-                className="w-full text-center bg-zinc-900 border-2 border-vibrant-yellow hover:bg-vibrant-yellow hover:text-black text-vibrant-yellow font-bold uppercase text-[11px] tracking-wider py-2.5 px-3 transition-all flex items-center justify-center gap-1.5 shadow-[4px_4px_0px_0px_rgba(255,221,0,0.15)] hover:shadow-[4px_4px_0px_0px_rgba(255,221,0,1)] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer select-none shrink-0"
+                className="w-full text-center bg-zinc-900 border-2 border-vibrant-yellow hover:bg-vibrant-yellow hover:text-black text-vibrant-yellow font-bold uppercase text-[11px] tracking-wider py-2 px-3 transition-all flex items-center justify-center gap-1.5 shadow-[3px_3px_0px_0px_rgba(255,221,0,0.15)] hover:shadow-none active:translate-x-0.5 active:translate-y-0.5 cursor-pointer select-none shrink-0"
               >
                 {showFullPrivacy ? (
                   <>
                     <ChevronUp className="w-4 h-4" />
-                    Zuklappen
+                    Zuklappen (Studio DSGVO)
                   </>
                 ) : (
                   <>
                     <ChevronDown className="w-4 h-4" />
-                    Vollständiger DSGVO-Text
+                    Studio DSGVO-Text
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                id="btn-toggle-macherwerk-datenschutz"
+                onClick={() => {
+                  setShowMacherwerkPrivacy(!showMacherwerkPrivacy);
+                  if(!showMacherwerkPrivacy) {
+                    setTimeout(() => {
+                      document.getElementById('macherwerk-privacy-section')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }
+                }}
+                className="w-full text-center bg-zinc-900 border-2 border-vibrant-cyan hover:bg-vibrant-cyan hover:text-black text-vibrant-cyan font-bold uppercase text-[11px] tracking-wider py-2 px-3 transition-all flex items-center justify-center gap-1.5 shadow-[3px_3px_0px_0px_rgba(0,240,255,0.15)] hover:shadow-none active:translate-x-0.5 active:translate-y-0.5 cursor-pointer select-none shrink-0"
+              >
+                {showMacherwerkPrivacy ? (
+                  <>
+                    <ChevronUp className="w-4 h-4" />
+                    Macherwerk App-Datenschutz zuklappen
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-4 h-4" />
+                    App-Datenschutzerklärung (Macherwerk)
                   </>
                 )}
               </button>
@@ -340,6 +425,110 @@ export function Footer({ company, privacy }: FooterProps) {
             
             <div className="pt-4 border-t border-zinc-850 text-center select-none text-xs text-zinc-550">
               {company.name} Softwareentwicklung • {company.street} • {company.zipCode} {company.city} • {company.country}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Dedicated Macherwerk App-Specific Privacy Section */}
+      {showMacherwerkPrivacy && (
+        <div id="macherwerk-privacy-section" className="border-t-2 border-zinc-850 bg-zinc-950 pb-16 px-4 md:px-8 transition-all duration-300">
+          <div className="max-w-6xl mx-auto mt-12 border-3 border-vibrant-cyan bg-zinc-900 p-6 md:p-8 space-y-8 shadow-[8px_8px_0px_0px_rgba(0,240,255,1)] text-zinc-300">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-zinc-800 pb-4 gap-4">
+              <div>
+                <h4 className="text-xl sm:text-2xl font-display font-black text-white tracking-tight uppercase flex items-center gap-2">
+                  <Scale className="w-6 h-6 text-vibrant-cyan shrink-0" />
+                  Datenschutzerklärung: App "Macherwerk"
+                </h4>
+                <p className="text-[10px] sm:text-xs text-zinc-500 font-mono mt-1">
+                  Direkt-Link für Google Play Console: <span className="text-vibrant-cyan underline break-all font-bold">https://gridwerk.de/#datenschutz-macherwerk</span>
+                </p>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <button
+                  type="button"
+                  id="btn-copy-macherwerk-privacy"
+                  onClick={copyMacherwerkPrivacyText}
+                  className="bg-vibrant-yellow hover:bg-black border-2 border-black hover:border-vibrant-yellow hover:text-vibrant-yellow text-black font-bold uppercase text-xs tracking-wider px-3 py-1.5 transition-all flex items-center gap-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
+                >
+                  {copiedPrivacyText ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-600" />
+                      Kopiert!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      Text Kopieren (Play Store)
+                    </>
+                  )}
+                </button>
+                <button 
+                  type="button"
+                  onClick={() => setShowMacherwerkPrivacy(false)}
+                  className="bg-vibrant-red hover:bg-black border-2 border-black hover:border-vibrant-red hover:text-vibrant-red text-white px-4 py-1.5 font-bold uppercase text-xs tracking-wider transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
+                >
+                  [X]
+                </button>
+              </div>
+            </div>
+
+            {/* Render formatted preview block */}
+            <div className="bg-zinc-950 p-4 font-mono text-xs text-zinc-400 border-2 border-black max-h-[350px] overflow-y-auto leading-relaxed whitespace-pre-wrap select-all">
+{`Datenschutzerklärung für die Android-App "Macherwerk"
+(Package-ID: de.gridwerk.macherwerk)
+
+1. Präambel & Verantwortliche Stelle
+Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Entwickler auf:
+
+Entwickler & Verantwortliche Stelle:
+Özgür Kilincer
+Gridwerk Softwareentwicklung
+Am Birket 1, 86650 Wemding, Deutschland
+E-Mail: Kilincer@outlook.com
+Tel: 01718484211
+Umsatzsteuer-Identifikationsnummer: DE268563088
+
+2. Grundprinzipien: Offline-First & Datensparsamkeit
+Die App "Macherwerk" ist als reine Offline-Anwendung konzipiert.
+- Lokalität: Alle von Ihnen erfassten Nahrungsmittel, Mahlzeiten, Kalorien, Nährwertprofile, Gewichtseinträge sowie freie Texteinträge werden ausschließlich auf Ihrem eigenen Speicherplatz in einer lokalen SQLite-Datenbank Ihres Android-Smartphones abgespeichert.
+- Keine Server-Übertragung: Es findet keine automatische Übertragung oder Synchronisation auf Cloud-Hoster, Webserver oder externe Netzwerke statt.
+- Kein Account-Zwang: Sie können die App verwenden, ohne ein Benutzerkonto anzulegen.
+
+3. Kamera-Berechtigung (Foto-Nährwertanalyse via On-Device AI)
+Zur optionalen Foto-Erkennung von Lebensmitteln benötigt die App Zugriff auf die Kamera Ihres Mobilgeräts.
+- Zweck: Aufnahme der Speise zur sofortigen grafischen Interpretation der Essensportionen.
+- On-Device KI: Die gesamte Fotoauswertung, Segmentierung und Nährwertzuordnung wird lokal auf Ihrem Smartphone (On-Device AI) verarbeitet. Es findet kein Upload des Fotos an externe Web-Server oder externe LLM-Systeme statt. Das Foto wird nach dem Erkennungsvorgang unmittelbar wieder verworfen.
+
+4. Keine Weitergabe an Dritte & Keine Werbe- oder Analyse-Tracker
+- Die App bindet keinerlei Werbenetzwerke (wie Google AdMob) oder Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
+- Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
+
+5. Rechte des Nutzers (Auskunft und vollständige Löschung)
+Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
+- Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
+
+6. Version und Stand der Erklärung
+Stand: 05. Juni 2026 / Version 1.0.0`}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm col-span-2">
+              <div className="space-y-3">
+                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-cyan">Empfehlung für Play Console</span>
+                <p className="text-zinc-400 leading-relaxed font-sans">
+                  Sie können den obenstehenden Text direkt herauskopieren und im <strong>Google Play Console Formular "Datenvereinbarung & Datenschutzerklärung"</strong> einfügen oder als Textdatei abspeichern. Die Angabe einer direkten HTTPS-URL ist im Store Pflicht. Verwenden Sie dafür diese Adresse im Browser:
+                </p>
+                <div className="bg-zinc-950 p-2.5 text-xs font-mono select-all text-white border border-zinc-800 font-bold truncate">
+                  {window.location.origin}/#datenschutz-macherwerk
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-yellow font-sans">Sicherheitsversprechen</span>
+                <p className="text-zinc-400 leading-relaxed font-sans">
+                  Durch den konsequenten Ausschluss jeglicher externen Verhaltensverfolgung und den Verzicht auf Cloud-Datenbanken erfüllt diese Formulierung die restriktivsten Datenschutzprüfungen für gesundheitsrelevante Mobilanwendungen im Google Play Store.
+                </p>
+              </div>
             </div>
           </div>
         </div>

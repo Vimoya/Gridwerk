@@ -14,7 +14,7 @@ import { AppInfo, CompanyInfo, PrivacyPolicyConfig } from './types';
 export const defaultCompanyInfo: CompanyInfo = {
   name: "Gridwerk",
   legalForm: "Einzelunternehmen", // e.g. "GmbH", "UG (haftungsbeschränkt)", "Einzelunternehmen"
-  ownerName: "Özgür Kilinçer", // Representative / Vertreten durch
+  ownerName: "Özgür Kilincer", // Representative / Vertreten durch
   street: "Am Birket 1",     // Your street and number
   zipCode: "86650",          // Your postal code
   city: "Wemding",           // Your city
@@ -28,7 +28,7 @@ export const defaultCompanyInfo: CompanyInfo = {
   // Vision statement on the Hero Section
   visionTitle: "Ernährungstracking. Intelligente Analysen. Perfekte Performance.",
   visionSubtitle: "Macherwerk revolutioniert das mobile Tracken Ihrer Fitness- und Gesundheitsziele durch innovative, datensparsame KI. Erfassen Sie Mahlzeiten in Rekordzeit und erhalten Sie sofortige Nährwert-Einblicke.",
-  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilinçer. Wir spezialisieren uns auf datensparsame High-Performance-Lösungen für Mobilgeräte und Web. Unser aktuelles Flaggschiff 'Macherwerk' bietet ein minimalistisches, datensicheres Ernährungstagebuch mit lokaler KI-Verarbeitung."
+  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilincer. Wir spezialisieren uns auf datensparsame High-Performance-Lösungen für Mobilgeräte und Web. Unser aktuelles Flaggschiff 'Macherwerk' bietet ein minimalistisches, datensicheres Ernährungstagebuch mit lokaler KI-Verarbeitung."
 };
 
 export const defaultApps: AppInfo[] = [

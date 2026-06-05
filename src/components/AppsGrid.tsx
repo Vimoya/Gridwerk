@@ -129,6 +129,23 @@ export function AppsGrid({ apps }: AppsGridProps) {
                         </li>
                       ))}
                     </ul>
+
+                    {/* Google Play Compliance link */}
+                    <div className="mt-3.5 pt-2.5 border-t-2 border-dashed border-black/30 flex flex-col gap-1.5 bg-zinc-50 p-2 border border-black/15">
+                      <span className="text-[10px] font-mono font-bold uppercase text-zinc-500">Google Play Console Link:</span>
+                      <a
+                        href="#datenschutz-macherwerk"
+                        onClick={() => {
+                          window.location.hash = '';
+                          setTimeout(() => {
+                            window.location.hash = '#datenschutz-macherwerk';
+                          }, 10);
+                        }}
+                        className="bg-vibrant-cyan hover:bg-black border-2 border-black text-black hover:text-vibrant-cyan px-2.5 py-1.5 text-center font-mono font-black text-[11px] uppercase tracking-wider cursor-pointer transition-all active:translate-x-0.5 active:translate-y-0.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none"
+                      >
+                        App-Datenschutz (DSGVO)
+                      </a>
+                    </div>
                   </div>
                 )}
 
