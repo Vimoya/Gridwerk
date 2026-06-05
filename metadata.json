@@ -1,0 +1,6 @@
+{
+  "name": "Gridwerk",
+  "description": "Offizielle Webpräsenz und App-Verzeichnis der Gridwerk Softwareentwicklung – Optimiert für Google Play Entwickler-Verifizierung.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

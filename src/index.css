@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-vibrant-cyan: #00F0FF;
+  --color-vibrant-red: #FF3E00;
+  --color-vibrant-yellow: #FFD600;
+  --color-vibrant-gray-light: #E5E5E5;
+  --color-vibrant-gray-dark: #E0E0E0;
+}
+
+@layer utilities {
+  .neo-border {
+    border: 4px solid #000000;
+  }
+  .neo-shadow {
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  .neo-shadow-sm {
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  .neo-shadow-lg {
+    box-shadow: 12px 12px 0px 0px #000000;
+  }
+  .neo-shadow-yellow {
+    box-shadow: 8px 8px 0px 0px #FFD600;
+  }
+  .neo-shadow-red {
+    box-shadow: 8px 8px 0px 0px #FF3E00;
+  }
+  .neo-shadow-cyan {
+    box-shadow: 8px 8px 0px 0px #00F0FF;
+  }
+  .neo-btn {
+    border: 4px solid #000000;
+    box-shadow: 6px 6px 0px 0px #000000;
+    transition: all 0.1s ease-in-out;
+  }
+  .neo-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+  .neo-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px 0px #000000;
+  }
+  
+  /* Subgrid / grid lines for background */
+  .neo-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  }
+  
+  .neo-grid-pattern-dark {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  }
+}
+
