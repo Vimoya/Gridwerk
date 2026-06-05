@@ -17,6 +17,7 @@ export function Footer({ company, privacy }: FooterProps) {
   const [showFullPrivacy, setShowFullPrivacy] = useState(false);
   const [showMacherwerkPrivacy, setShowMacherwerkPrivacy] = useState(false);
   const [copiedPrivacyText, setCopiedPrivacyText] = useState(false);
+  const [copiedPrivacyUrl, setCopiedPrivacyUrl] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -37,6 +38,12 @@ export function Footer({ company, privacy }: FooterProps) {
     navigator.clipboard.writeText(company.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const copyMacherwerkPrivacyUrl = () => {
+    navigator.clipboard.writeText("https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk");
+    setCopiedPrivacyUrl(true);
+    setTimeout(() => setCopiedPrivacyUrl(false), 2000);
   };
 
   const copyMacherwerkPrivacyText = () => {
@@ -441,7 +448,7 @@ Stand: 05. Juni 2026 / Version 1.0.0`;
                   Datenschutzerklärung: App "Macherwerk"
                 </h4>
                 <p className="text-[10px] sm:text-xs text-zinc-500 font-mono mt-1">
-                  Direkt-Link für Google Play Console: <span className="text-vibrant-cyan underline break-all font-bold">https://gridwerk.de/#datenschutz-macherwerk</span>
+                  Direkt-Link für Google Play Console: <span className="text-vibrant-cyan underline break-all font-bold">https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk</span>
                 </p>
               </div>
               <div className="flex gap-2 shrink-0">
@@ -516,10 +523,29 @@ Stand: 05. Juni 2026 / Version 1.0.0`}
               <div className="space-y-3">
                 <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-cyan">Empfehlung für Play Console</span>
                 <p className="text-zinc-400 leading-relaxed font-sans">
-                  Sie können den obenstehenden Text direkt herauskopieren und im <strong>Google Play Console Formular "Datenvereinbarung & Datenschutzerklärung"</strong> einfügen oder als Textdatei abspeichern. Die Angabe einer direkten HTTPS-URL ist im Store Pflicht. Verwenden Sie dafür diese Adresse im Browser:
+                  Sie können den obenstehenden Text direkt herauskopieren und im <strong>Google Play Console Formular "Datenvereinbarung & Datenschutzerklärung"</strong> einfügen. Die Angabe einer direkten HTTPS-URL ist im Store Pflicht. Verwenden Sie dafür diese Adresse im Browser:
                 </p>
-                <div className="bg-zinc-950 p-2.5 text-xs font-mono select-all text-white border border-zinc-800 font-bold truncate">
-                  {window.location.origin}/#datenschutz-macherwerk
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <div className="bg-zinc-950 p-2.5 text-xs font-mono select-all text-white border border-zinc-800 font-bold truncate flex-1 flex items-center justify-between">
+                    <span>https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={copyMacherwerkPrivacyUrl}
+                    className="bg-vibrant-cyan hover:bg-black border-2 border-black hover:border-vibrant-cyan hover:text-vibrant-cyan text-black px-3 py-2 font-bold uppercase text-[10px] tracking-wider transition-all flex items-center justify-center gap-1 shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
+                  >
+                    {copiedPrivacyUrl ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        Kopiert!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        Link Kopieren
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
 
