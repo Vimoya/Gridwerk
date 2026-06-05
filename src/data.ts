@@ -26,9 +26,9 @@ export const defaultCompanyInfo: CompanyInfo = {
   registerNumber: "",        // If registered, otherwise leave empty or "N/A"
   
   // Vision statement on the Hero Section
-  visionTitle: "Stabile Software. Logische Strukturen. Perfekte Performance.",
-  visionSubtitle: "Wir bei Gridwerk entwickeln robuste mobile Apps für Android und Web. Mit unserem neuen Flaggschiff 'Macherwerk' revolutionieren wir das mobile Tracken Ihrer Fitness- und Gesundheitsziele durch innovative KI.",
-  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio mit Spezialisierung auf minimalistische High-Performance-Lösungen für Mobilgeräte. Alle unsere Anwendungen werden lokal von Özgür Kilinçer entwickelt, durchlaufen strenge Datenschutz-Audits und sind für Langlebigkeit optimiert."
+  visionTitle: "Ernährungstracking. Intelligente Analysen. Perfekte Performance.",
+  visionSubtitle: "Macherwerk revolutioniert das mobile Tracken Ihrer Fitness- und Gesundheitsziele durch innovative, datensparsame KI. Erfassen Sie Mahlzeiten in Rekordzeit und erhalten Sie sofortige Nährwert-Einblicke.",
+  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilinçer. Wir spezialisieren uns auf datensparsame High-Performance-Lösungen für Mobilgeräte und Web. Unser aktuelles Flaggschiff 'Macherwerk' bietet ein minimalistisches, datensicheres Ernährungstagebuch mit lokaler KI-Verarbeitung."
 };
 
 export const defaultApps: AppInfo[] = [

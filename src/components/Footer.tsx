@@ -4,7 +4,7 @@
  */
 
 import { CompanyInfo, PrivacyPolicyConfig } from '../types';
-import { Mail, Phone, MapPin, Building2, User, HelpCircle, FileText, Check, Copy } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2, User, HelpCircle, FileText, Check, Copy, ChevronDown, ChevronUp, Scale } from 'lucide-react';
 import { useState } from 'react';
 
 interface FooterProps {
@@ -14,6 +14,7 @@ interface FooterProps {
 
 export function Footer({ company, privacy }: FooterProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [showFullPrivacy, setShowFullPrivacy] = useState(false);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(company.email);
@@ -174,6 +175,26 @@ export function Footer({ company, privacy }: FooterProps) {
               Die von uns im Google Play Store bereitgestellten mobilen Apps erheben im Regelfall keinerlei verhaltensbezogenen Analysedaten im Hintergrund. Sollte eine App zur Erfüllung ihrer Kernfunktionen systemspezifische Sensortaten oder Standortdienste benötigen, fragen wir dies explizit ab.
             </p>
 
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => setShowFullPrivacy(!showFullPrivacy)}
+                className="w-full text-center bg-zinc-900 border-2 border-vibrant-yellow hover:bg-vibrant-yellow hover:text-black text-vibrant-yellow font-bold uppercase text-[11px] tracking-wider py-2.5 px-3 transition-all flex items-center justify-center gap-1.5 shadow-[4px_4px_0px_0px_rgba(255,221,0,0.15)] hover:shadow-[4px_4px_0px_0px_rgba(255,221,0,1)] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer select-none shrink-0"
+              >
+                {showFullPrivacy ? (
+                  <>
+                    <ChevronUp className="w-4 h-4" />
+                    Zuklappen
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-4 h-4" />
+                    Vollständiger DSGVO-Text
+                  </>
+                )}
+              </button>
+            </div>
+
             <div className="pt-4 border-t border-zinc-900 text-[10px] text-zinc-550 flex flex-col sm:flex-row justify-between gap-1 select-none">
               <span>Gridwerk © 2026</span>
               <span className="font-mono text-zinc-500">Google Play Verify Ready</span>
@@ -181,6 +202,148 @@ export function Footer({ company, privacy }: FooterProps) {
           </div>
         </div>
       </div>
+
+      {/* Expanded long-form DSGVO Statement */}
+      {showFullPrivacy && (
+        <div className="border-t-2 border-zinc-850 bg-zinc-950 pb-16 px-4 md:px-8 transition-all duration-300">
+          <div className="max-w-6xl mx-auto mt-12 border-3 border-vibrant-yellow bg-zinc-900 p-6 md:p-8 space-y-8 shadow-[8px_8px_0px_0px_rgba(255,221,0,0.9)] text-zinc-300">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-zinc-800 pb-4 gap-4">
+              <div>
+                <h4 className="text-xl sm:text-2xl font-display font-black text-white tracking-tight uppercase flex items-center gap-2">
+                  <Scale className="w-6 h-6 text-vibrant-yellow shrink-0" />
+                  Vollständige Datenschutzerklärung (DSGVO)
+                </h4>
+                <p className="text-[10px] sm:text-xs text-zinc-500 font-mono mt-1">Konform mit Art. 13 & 14 DSGVO für Web, Google Play Store & Mobile Apps</p>
+              </div>
+              <button 
+                type="button"
+                onClick={() => setShowFullPrivacy(false)}
+                className="bg-vibrant-red hover:bg-black border-2 border-black hover:border-vibrant-red hover:text-vibrant-red text-white px-4 py-1.5 font-bold uppercase text-xs tracking-wider transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(255,0,0,1)] shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
+              >
+                Schließen [X]
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-xs sm:text-sm">
+              {/* Section 1 */}
+              <div className="space-y-4">
+                <div className="border-l-4 border-vibrant-cyan pl-3 space-y-1">
+                  <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">1. Allgemeine Hinweise & Pflichtinformationen</h5>
+                  <p className="text-zinc-500 text-[11px]">Schutz personenbezogener Daten nach gesetzlichen Vorgaben</p>
+                </div>
+                <div className="space-y-3 font-sans text-xs text-zinc-400 leading-relaxed">
+                  <p>
+                    Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO, BDSG) sowie dieser Datenschutzerklärung.
+                  </p>
+                  <p>
+                    Wenn Sie diese Website nutzen oder unsere Mobile-Apps verwenden, werden verschiedene personenbezogene Daten verarbeitet. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Diese Erklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen.
+                  </p>
+                  <p>
+                    Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist technisch nicht möglich.
+                  </p>
+                  <div className="bg-zinc-950 p-4 border border-zinc-800 space-y-1 text-[11px]">
+                    <span className="font-mono text-zinc-400 font-bold uppercase text-[10px] block mb-1">Verantwortliche Stelle:</span>
+                    <p className="text-white font-bold">{company.ownerName}</p>
+                    <p>{company.name} ({company.legalForm})</p>
+                    <p>{company.street}, {company.zipCode} {company.city}, {company.country}</p>
+                    <p>E-Mail: <span className="text-vibrant-cyan select-all">{company.email}</span></p>
+                    {company.phone && <p>Telefon: {company.phone}</p>}
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 2 */}
+              <div className="space-y-4">
+                <div className="border-l-4 border-vibrant-yellow pl-3 space-y-1">
+                  <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">2. Datenerfassung auf dieser Website</h5>
+                  <p className="text-zinc-500 text-[11px]">Infrastruktur-Hosting & Logfiles</p>
+                </div>
+                <div className="space-y-3 font-sans text-xs text-zinc-400 leading-relaxed">
+                  <p>
+                    <strong className="text-white">Server-Logfiles:</strong> Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp/Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und die IP-Adresse.
+                  </p>
+                  <p>
+                    Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Stabilitätsoptimierung seiner Website.
+                  </p>
+                  <p>
+                    <strong className="text-white">Ausschließliche Verweigerung von Tracking & Cookies:</strong> Diese Web-Repräsentanz verzichtet vollständig auf HTTP-Cookies sowie auf Tracking-Tools (wie Google Analytics, Matomo etc.). Es findet absolut kein Tracking Ihres Verhaltens statt.
+                  </p>
+                  <p>
+                    <strong className="text-white">Kontaktaufnahme per E-Mail:</strong> Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben aus der E-Mail inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO).
+                  </p>
+                </div>
+              </div>
+
+              {/* Section 3 */}
+              <div className="space-y-4 lg:col-span-2 border-t border-zinc-800 pt-6">
+                <div className="border-l-4 border-vibrant-red pl-3 space-y-1">
+                  <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">3. Spezifischer Datenschutz der Mobil-Anwendung "Macherwerk"</h5>
+                  <p className="text-zinc-500 text-[11px]">Berechtigungen und On-Device Datenverarbeitung der Ernährungstagebuch-App</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 space-y-0 text-xs sm:text-sm font-sans text-zinc-400 leading-relaxed">
+                  <div className="space-y-3">
+                    <p>
+                      <span className="text-vibrant-yellow font-bold uppercase font-mono text-xs block mb-1">A. Lokaler Datenspeicher (100% Offline-Betrieb):</span>
+                      Die Anwendung <strong>Macherwerk</strong> wurde als restriktiv privatsphärenfreundliche "Offline-First"-Anwendung konzipiert. Alle eingetragenen Fitnesswerte, Mahlzeiten, Gewichtseinträge, Kalorienaufzeichnungen und Nährwerte verbleiben und speichern sich ausschließlich in einer lokalen SQLite-Datenbank auf Ihrem Android-Handy.
+                    </p>
+                    <p>
+                      Es erfolgt keine automatische Speicherung auf Cloud-Servern, kein Datensynchronisationsdienst an externe Anbieter und kein unautorisierter Webdatenverkehr. Ihre Gesundheitsdaten unterliegen Ihrer vollständigen physischen Verfügungsgewalt.
+                    </p>
+                    <p>
+                      <span className="text-vibrant-cyan font-bold uppercase font-mono text-xs block mb-1">B. Kamera-Berechtigungen (Foto-Nährwertanalyse):</span>
+                      Zur intelligenten Fotoerkennung von Nahrungsmitteln benötigt die App temporären Zugriff auf die Hardware-Kamera Ihres Mobilgeräts. Dieser Zugriff erfolgt nur nach Ihrer expliziten Erlaubnis (Art. 6 Abs. 1 lit. a DSGVO).
+                    </p>
+                    <p>
+                      Die Fotoanalyse sowie die Nahrungserkennung werden live und lokal direkt auf Ihrem Smartphone (On-Device AI) berechnet. Das Bild wird nicht an Dritte übertragen, nicht mit Online-Servern geteilt und nach dem Erkennungsvorgang sofort verworfen.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <p>
+                      <span className="text-vibrant-red font-bold uppercase font-mono text-xs block mb-1">C. Intelligente Text- und Musterauswertung (On-Device KI):</span>
+                      Bei Freitexteingaben (z.B. "Ein Becher Joghurt und 50g Himbeeren") interpretiert die integrierte KI-Engine Ihre Eingaben on-device. Es werden keine Texte, Bilder oder Protokolle an externe LLM-Systeme (wie Online-APIs) hochgeladen.
+                    </p>
+                    <p>
+                      <span className="text-emerald-400 font-bold uppercase font-mono text-xs block mb-1">D. Konsequenter Ausschluss von Werbe- & Analyse-Trackern:</span>
+                      Wir binden keine kommerziellen Trackingsysteme oder Verhaltens-SDKs in unsere App ein. Wir verzichten vollständig auf:
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1 text-zinc-500 font-mono text-xs">
+                      <li>Google AdMob / Werbe-Vermittlung (Werbung)</li>
+                      <li>Firebase Analytics / Flurry / Segment (Nutzungsanalyse)</li>
+                      <li>Social Media SDKs (Zweckentfremdung von Identitäten)</li>
+                    </ul>
+                    <p>
+                      Somit ist ausgeschlossen, dass Mobile-Advertising-IDs (IDFA/AAID) oder App-Installationsmuster an Datenbroker oder Werbeagenturen weitergereicht werden.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 4 */}
+              <div className="space-y-4 lg:col-span-2 border-t border-zinc-800 pt-6">
+                <div className="border-l-4 border-emerald-500 pl-3 space-y-1">
+                  <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">4. Ihre gesetzlichen Rechte als betroffene Person (DSGVO)</h5>
+                  <p className="text-zinc-500 text-[11px]">Recht auf Auskunft, Löschung und datenschutzrechtliche Absicherung</p>
+                </div>
+                <div className="space-y-3 font-sans text-xs text-zinc-400 leading-relaxed">
+                  <p>
+                    Sie haben das gesetzliche Recht auf unentgeltliche <strong>Auskunft (Art. 15 DSGVO)</strong> über Ihre personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf <strong>Berichtigung (Art. 16 DSGVO)</strong>, Sperrung oder <strong>Löschung (Art. 17 DSGVO)</strong> dieser Daten.
+                  </p>
+                  <p>
+                    Da die App "Macherwerk" keinerlei Daten an uns übermittelt und alle Werte rein lokal hält, können Sie die gespeicherten Einträge jederzeit selbständig und unwiderruflich löschen: Löschen Sie dazu einfach den Speicher bzw. die App-Daten in den Einstellungen Ihres Smartphones oder deinstallieren Sie die App vollständig.
+                  </p>
+                  <p>
+                    Sollten Sie der Meinung sein, dass die Verarbeitung Ihrer Daten gegen gesetzliche Vorschriften verstößt, steht Ihnen ein <strong>Beschwerderecht bei einer Aufsichtsbehörde</strong> zu (Art. 77 DSGVO). Die für uns zuständige Landesbehörde ist: <em>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, Deutschland</em>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="pt-4 border-t border-zinc-850 text-center select-none text-xs text-zinc-550">
+              {company.name} Softwareentwicklung • {company.street} • {company.zipCode} {company.city} • {company.country}
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
