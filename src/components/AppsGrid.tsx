@@ -69,17 +69,22 @@ export function AppsGrid({ apps }: AppsGridProps) {
                 </div>
 
                 {/* Card Brand Header */}
-                <h3 className="text-2xl font-display font-black text-black mb-1.5 uppercase tracking-tight">{app.name}</h3>
+                <h3 className="text-2xl font-display font-black text-black mb-1 uppercase tracking-tight break-words">{app.name}</h3>
+                
+                {/* Tagline */}
+                <p className="text-xs font-mono font-bold text-vibrant-red uppercase tracking-wide mb-2.5 break-words [hyphens:auto]">
+                  {app.tagline}
+                </p>
                 
                 {/* Dev Package Identifier */}
-                <div className="flex items-center gap-1 bg-white border-2 border-black py-1 px-2 mb-4 max-w-max select-all cursor-pointer shadow-sm">
-                  <Code className="w-3.5 h-3.5 text-zinc-950" id={`code-icon-${app.id}`} />
-                  <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-950 truncate max-w-[200px]" title="Packet-ID für Google Console">
+                <div className="flex items-center gap-1 bg-white border-2 border-black py-1 px-2 mb-4 max-w-full select-all cursor-pointer shadow-sm">
+                  <Code className="w-3.5 h-3.5 text-zinc-950 shrink-0" id={`code-icon-${app.id}`} />
+                  <span className="text-[10px] sm:text-xs font-mono font-bold text-zinc-950 truncate" title="Packet-ID für Google Console">
                     {app.packageName}
                   </span>
                 </div>
 
-                <p className="text-zinc-900 font-sans text-sm mb-4 leading-relaxed font-semibold">
+                <p className="text-zinc-900 font-sans text-sm mb-4 leading-relaxed font-semibold break-words">
                   {app.description}
                 </p>
 
@@ -88,7 +93,7 @@ export function AppsGrid({ apps }: AppsGridProps) {
                   {app.tags.map(tag => (
                     <span 
                       key={tag} 
-                      className="bg-white border-2 border-black text-black px-2 py-0.5 text-[10px] sm:text-xs font-mono font-bold"
+                      className="bg-white border-2 border-black text-black px-2 py-0.5 text-[10px] sm:text-xs font-mono font-bold break-words [hyphens:auto]"
                     >
                       #{tag}
                     </span>

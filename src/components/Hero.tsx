@@ -26,7 +26,7 @@ export function Hero({ company, appCount }: HeroProps) {
             <span>Google Play Offizieller Entwickler-Verify</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-black leading-tight text-black mb-6 uppercase tracking-tight">
+          <h2 className="text-[26.5px] min-[390px]:text-3xl sm:text-5xl md:text-6xl font-display font-black leading-tight text-black mb-6 uppercase tracking-tight break-words [hyphens:auto]">
             {company.visionTitle}
           </h2>
 
