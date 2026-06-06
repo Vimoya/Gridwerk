@@ -76,11 +76,15 @@ Zur optionalen Foto-Erkennung von Lebensmitteln benötigt die App Zugriff auf di
 - Die App bindet keinerlei Werbenetzwerke (wie Google AdMob) oder Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
 - Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
 
-5. Rechte des Nutzers (Auskunft und vollständige Löschung)
+5. Ausschluss medizinischer Beratung & KI-Unterstützung
+- Kein medizinischer Ratgeber: Die App "Macherwerk" dient ausschließlich der Dokumentation im Rahmen eines Ernährungstagebuchs. Sie bietet keinerlei medizinische Beratung, therapeutische Ratschläge, Diagnosen oder Behandlungsempfehlungen an. Die App ist kein Medizinprodukt und hat keinen medizinischen Hintergrund. Suchen Sie bei gesundheitlichen Beeinträchtigungen oder Fragen zu Diäten und Ernährungstherapien stets qualifizierten medizinischen Rat bei einem Arzt oder Ernährungsberater.
+- KI als Erfassungshilfe: Die integrierten Künstliche-Intelligenz-Funktionen (z. B. Texterkennung oder optionale Foto-Analyse) dienen ausschließlich als technische Hilfestellung (Erfassungshilfe und Orientierung) bei der Protokollierung. Die Ergebnisse basieren auf Schätzwerten und sind unverbindlich. Sie sollten für keine medizinischen Entscheidungen (z. B. Medikamentendosierungen) herangezogen werden.
+
+6. Rechte des Nutzers (Auskunft und vollständige Löschung)
 Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
 - Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
 
-6. Version und Stand der Erklärung
+7. Version und Stand der Erklärung
 Stand: 05. Juni 2026 / Version 1.0.0`;
 
     navigator.clipboard.writeText(privacyText);
@@ -511,11 +515,15 @@ Zur optionalen Foto-Erkennung von Lebensmitteln benötigt die App Zugriff auf di
 - Die App bindet keinerlei Werbenetzwerke (wie Google AdMob) oder Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
 - Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
 
-5. Rechte des Nutzers (Auskunft und vollständige Löschung)
+5. Ausschluss medizinischer Beratung & KI-Unterstützung
+- Kein medizinischer Ratgeber: Die App "Macherwerk" dient ausschließlich der Dokumentation im Rahmen eines Ernährungstagebuchs. Sie bietet keinerlei medizinische Beratung, therapeutische Ratschläge, Diagnosen oder Behandlungsempfehlungen an. Die App ist kein Medizinprodukt und hat keinen medizinischen Hintergrund. Suchen Sie bei gesundheitlichen Beeinträchtigungen oder Fragen zu Diäten und Ernährungstherapien stets qualifizierten medizinischen Rat bei einem Arzt oder Ernährungsberater.
+- KI als Erfassungshilfe: Die integrierten Künstliche-Intelligenz-Funktionen (z. B. Texterkennung oder optionale Foto-Analyse) dienen ausschließlich als technische Hilfestellung (Erfassungshilfe und Orientierung) bei der Protokollierung. Die Ergebnisse basieren auf Schätzwerten und sind unverbindlich. Sie sollten für keine medizinischen Entscheidungen (z. B. Medikamentendosierungen) herangezogen werden.
+
+6. Rechte des Nutzers (Auskunft und vollständige Löschung)
 Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
 - Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
 
-6. Version und Stand der Erklärung
+7. Version und Stand der Erklärung
 Stand: 05. Juni 2026 / Version 1.0.0`}
             </div>
 
