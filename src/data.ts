@@ -27,8 +27,8 @@ export const defaultCompanyInfo: CompanyInfo = {
   
   // Vision statement on the Hero Section
   visionTitle: "Ernährungstracking. Intelligente Analysen. Perfekte Performance.",
-  visionSubtitle: "Macherwerk revolutioniert das mobile Tracken Ihrer Fitness- und Gesundheitsziele durch innovative, datensparsame KI. Erfassen Sie Mahlzeiten in Rekordzeit und erhalten Sie sofortige Nährwert-Einblicke.",
-  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilincer. Wir spezialisieren uns auf datensparsame High-Performance-Lösungen für Mobilgeräte und Web. Unser aktuelles Flaggschiff 'Macherwerk' bietet ein minimalistisches, datensicheres Ernährungstagebuch mit lokaler KI-Verarbeitung."
+  visionSubtitle: "Gridwerk ist Ihr Partner für hochqualitative und kostengünstige App-Entwicklung aus Deutschland. Mit unserem aktuellen Highlight 'Macherwerk' revolutionieren wir das mobile Tracken Ihrer Fitness- und Gesundheitsziele durch innovative, datensparsame KI. Erfassen Sie Mahlzeiten in Rekordzeit und erhalten Sie sofortige Nährwert-Einblicke.",
+  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilincer. Wir spezialisieren uns auf die kostengünstige Erstellung von datensparsamen High-Performance-Lösungen für Mobilgeräte (Android/iOS) und das Web. Unser aktuelles Flaggschiff 'Macherwerk' bietet ein minimalistisches, datensicheres Ernährungstagebuch mit intelligenter KI-Verarbeitung."
 };
 
 export const defaultApps: AppInfo[] = [

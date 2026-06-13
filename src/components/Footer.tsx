@@ -16,8 +16,6 @@ export function Footer({ company, privacy }: FooterProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [showFullPrivacy, setShowFullPrivacy] = useState(false);
   const [showMacherwerkPrivacy, setShowMacherwerkPrivacy] = useState(false);
-  const [copiedPrivacyText, setCopiedPrivacyText] = useState(false);
-  const [copiedPrivacyUrl, setCopiedPrivacyUrl] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -38,58 +36,6 @@ export function Footer({ company, privacy }: FooterProps) {
     navigator.clipboard.writeText(company.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const copyMacherwerkPrivacyUrl = () => {
-    navigator.clipboard.writeText("https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk");
-    setCopiedPrivacyUrl(true);
-    setTimeout(() => setCopiedPrivacyUrl(false), 2000);
-  };
-
-  const copyMacherwerkPrivacyText = () => {
-    const privacyText = `Datenschutzerklärung für die Android-App "Macherwerk"
-(Package-ID: de.gridwerk.macherwerk)
-
-1. Präambel & Verantwortliche Stelle
-Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Entwickler auf:
-
-Entwickler & Verantwortliche Stelle:
-Özgür Kilincer
-Gridwerk Softwareentwicklung
-Am Birket 1, 86650 Wemding, Deutschland
-E-Mail: Kilincer@outlook.com
-Tel: 01718484211
-Umsatzsteuer-Identifikationsnummer: DE268563088
-
-2. Grundprinzipien: Offline-First & Datensparsamkeit
-Die App "Macherwerk" ist als reine Offline-Anwendung konzipiert.
-- Lokalität: Alle von Ihnen erfassten Nahrungsmittel, Mahlzeiten, Kalorien, Nährwertprofile, Gewichtseinträge sowie freie Texteinträge werden ausschließlich auf Ihrem eigenen Speicherplatz in einer lokalen SQLite-Datenbank Ihres Android-Smartphones abgespeichert.
-- Keine Server-Übertragung: Es findet keine automatische Übertragung oder Synchronisation auf Cloud-Hoster, Webserver oder externe Netzwerke statt.
-- Kein Account-Zwang: Sie können die App verwenden, ohne ein Benutzerkonto anzulegen.
-
-3. Kamera-Berechtigung (Foto-Nährwertanalyse via On-Device AI)
-Zur optionalen Foto-Erkennung von Lebensmitteln benötigt die App Zugriff auf die Kamera Ihres Mobilgeräts.
-- Zweck: Aufnahme der Speise zur sofortigen grafischen Interpretation der Essensportionen.
-- On-Device KI: Die gesamte Fotoauswertung, Segmentierung und Nährwertzuordnung wird lokal auf Ihrem Smartphone (On-Device AI) verarbeitet. Es findet kein Upload des Fotos an externe Web-Server oder externe LLM-Systeme statt. Das Foto wird nach dem Erkennungsvorgang unmittelbar wieder verworfen.
-
-4. Keine Weitergabe an Dritte & Keine Werbe- oder Analyse-Tracker
-- Die App bindet keinerlei Werbenetzwerke (wie Google AdMob) oder Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
-- Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
-
-5. Ausschluss medizinischer Beratung & KI-Unterstützung
-- Kein medizinischer Ratgeber: Die App "Macherwerk" dient ausschließlich der Dokumentation im Rahmen eines Ernährungstagebuchs. Sie bietet keinerlei medizinische Beratung, therapeutische Ratschläge, Diagnosen oder Behandlungsempfehlungen an. Die App ist kein Medizinprodukt und hat keinen medizinischen Hintergrund. Suchen Sie bei gesundheitlichen Beeinträchtigungen oder Fragen zu Diäten und Ernährungstherapien stets qualifizierten medizinischen Rat bei einem Arzt oder Ernährungsberater.
-- KI als Erfassungshilfe: Die integrierten Künstliche-Intelligenz-Funktionen (z. B. Texterkennung oder optionale Foto-Analyse) dienen ausschließlich als technische Hilfestellung (Erfassungshilfe und Orientierung) bei der Protokollierung. Die Ergebnisse basieren auf Schätzwerten und sind unverbindlich. Sie sollten für keine medizinischen Entscheidungen (z. B. Medikamentendosierungen) herangezogen werden.
-
-6. Rechte des Nutzers (Auskunft und vollständige Löschung)
-Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
-- Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
-
-7. Version und Stand der Erklärung
-Stand: 05. Juni 2026 / Version 1.0.0`;
-
-    navigator.clipboard.writeText(privacyText);
-    setCopiedPrivacyText(true);
-    setTimeout(() => setCopiedPrivacyText(false), 2000);
   };
 
   return (
@@ -374,41 +320,30 @@ Stand: 05. Juni 2026 / Version 1.0.0`;
               <div className="space-y-4 lg:col-span-2 border-t border-zinc-800 pt-6">
                 <div className="border-l-4 border-vibrant-red pl-3 space-y-1">
                   <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">3. Spezifischer Datenschutz der Mobil-Anwendung "Macherwerk"</h5>
-                  <p className="text-zinc-500 text-[11px]">Berechtigungen und On-Device Datenverarbeitung der Ernährungstagebuch-App</p>
+                  <p className="text-zinc-500 text-[11px]">Berechtigungen, KI-Einsatz und Verarbeitung der Ernährungstagebuch-App</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 space-y-0 text-xs sm:text-sm font-sans text-zinc-400 leading-relaxed">
                   <div className="space-y-3">
                     <p>
                       <span className="text-vibrant-yellow font-bold uppercase font-mono text-xs block mb-1">A. Lokaler Datenspeicher (100% Offline-Betrieb):</span>
-                      Die Anwendung <strong>Macherwerk</strong> wurde als restriktiv privatsphärenfreundliche "Offline-First"-Anwendung konzipiert. Alle eingetragenen Fitnesswerte, Mahlzeiten, Gewichtseinträge, Kalorienaufzeichnungen und Nährwerte verbleiben und speichern sich ausschließlich in einer lokalen SQLite-Datenbank auf Ihrem Android-Handy.
+                      Die Anwendung <strong>Macherwerk</strong> wurde als restriktiv privatsphärenfreundliche "Offline-First"-Anwendung konzipiert. Alle eingetragenen Fitnesswerte, Mahlzeiten, Gewichtseinträge, Kalorienaufzeichnungen und Nährwerte verbleiben und speichern sich ausschließlich in einer lokalen SQLite-Datenbank auf Ihrem Android-Handy. Es erfolgt keine automatische Speicherung Ihrer Profildaten auf Cloud-Servern.
                     </p>
                     <p>
-                      Es erfolgt keine automatische Speicherung auf Cloud-Servern, kein Datensynchronisationsdienst an externe Anbieter und kein unautorisierter Webdatenverkehr. Ihre Gesundheitsdaten unterliegen Ihrer vollständigen physischen Verfügungsgewalt.
+                      <span className="text-vibrant-cyan font-bold uppercase font-mono text-xs block mb-1">B. Integration der OpenAI API für KI-gestützte Analysen:</span>
+                      Zur intelligenten Erkennung und Schätzung von Freitexteingaben oder Nahrungsmittelbeschreibungen nutzt die App eine datenschutzkonforme Netzanbindung an die offizielle OpenAI API (Schnittstelle).
                     </p>
                     <p>
-                      <span className="text-vibrant-cyan font-bold uppercase font-mono text-xs block mb-1">B. Kamera-Berechtigungen (Foto-Nährwertanalyse):</span>
-                      Zur intelligenten Fotoerkennung von Nahrungsmitteln benötigt die App temporären Zugriff auf die Hardware-Kamera Ihres Mobilgeräts. Dieser Zugriff erfolgt nur nach Ihrer expliziten Erlaubnis (Art. 6 Abs. 1 lit. a DSGVO).
-                    </p>
-                    <p>
-                      Die Fotoanalyse sowie die Nahrungserkennung werden live und lokal direkt auf Ihrem Smartphone (On-Device AI) berechnet. Das Bild wird nicht an Dritte übertragen, nicht mit Online-Servern geteilt und nach dem Erkennungsvorgang sofort verworfen.
+                      Hierbei werden <strong>ausschließlich die reinen Beschreibungen der Lebensmittel und Mengenangaben</strong> übertragen, die für das Ernährungstagebuch analysiert werden sollen. Es werden <strong>keine personenbezogenen Daten</strong> wie E-Mail-Adresse, Name, Geräte-IDs, IP-Adressen oder Standortsdaten an OpenAI gesendet. Alle Abfragen an die OpenAI API erfolgen anonymisiert. OpenAI verwendet API-Anfragen gemäß eigenen Richtlinien nicht für das Training von KI-Modellen.
                     </p>
                   </div>
                   <div className="space-y-3">
                     <p>
-                      <span className="text-vibrant-red font-bold uppercase font-mono text-xs block mb-1">C. Intelligente Text- und Musterauswertung (On-Device KI):</span>
-                      Bei Freitexteingaben (z.B. "Ein Becher Joghurt und 50g Himbeeren") interpretiert die integrierte KI-Engine Ihre Eingaben on-device. Es werden keine Texte, Bilder oder Protokolle an externe LLM-Systeme (wie Online-APIs) hochgeladen.
+                      <span className="text-vibrant-red font-bold uppercase font-mono text-xs block mb-1">C. Kamera-Berechtigungen (Foto-Erkennung):</span>
+                      Zur optionalen intelligenten Foto-Erkennung von Mahlzeiten fordert die App Zugriff auf die Kamera des Geräts an. Das aufgenommene Foto wird temporär on-device verarbeitet oder rein zur Lebensmittel- und Mengenschätzung im Rahmen des oben beschriebenen anonymisierten API-Schnittstellenzugriffs an OpenAI übermittelt. Es werden keine Profilbilder, persönliche Metadaten oder Gesichter gespeichert. Das Foto wird nach der Analyse sofort wieder gelöscht bzw. verworfen.
                     </p>
                     <p>
                       <span className="text-emerald-400 font-bold uppercase font-mono text-xs block mb-1">D. Konsequenter Ausschluss von Werbe- & Analyse-Trackern:</span>
-                      Wir binden keine kommerziellen Trackingsysteme oder Verhaltens-SDKs in unsere App ein. Wir verzichten vollständig auf:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-1 text-zinc-500 font-mono text-xs">
-                      <li>Google AdMob / Werbe-Vermittlung (Werbung)</li>
-                      <li>Firebase Analytics / Flurry / Segment (Nutzungsanalyse)</li>
-                      <li>Social Media SDKs (Zweckentfremdung von Identitäten)</li>
-                    </ul>
-                    <p>
-                      Somit ist ausgeschlossen, dass Mobile-Advertising-IDs (IDFA/AAID) oder App-Installationsmuster an Datenbroker oder Werbeagenturen weitergereicht werden.
+                      Wir binden keine kommerziellen Trackingsysteme oder Verhaltens-SDKs in unsere App ein. Wir verzichten vollständig auf Werbe-Netzwerke (wie Google AdMob) oder unautorisierte Nutzungsanalysen (wie Firebase Analytics, Segment, Flurry). Somit werden auch keine Mobile-Advertising-IDs an Datenbroker weitergegeben.
                     </p>
                   </div>
                 </div>
@@ -456,30 +391,12 @@ Stand: 05. Juni 2026 / Version 1.0.0`;
                 </p>
               </div>
               <div className="flex gap-2 shrink-0">
-                <button
-                  type="button"
-                  id="btn-copy-macherwerk-privacy"
-                  onClick={copyMacherwerkPrivacyText}
-                  className="bg-vibrant-yellow hover:bg-black border-2 border-black hover:border-vibrant-yellow hover:text-vibrant-yellow text-black font-bold uppercase text-xs tracking-wider px-3 py-1.5 transition-all flex items-center gap-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
-                >
-                  {copiedPrivacyText ? (
-                    <>
-                      <Check className="w-4 h-4 text-emerald-600" />
-                      Kopiert!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-4 h-4" />
-                      Text Kopieren (Play Store)
-                    </>
-                  )}
-                </button>
                 <button 
                   type="button"
                   onClick={() => setShowMacherwerkPrivacy(false)}
                   className="bg-vibrant-red hover:bg-black border-2 border-black hover:border-vibrant-red hover:text-vibrant-red text-white px-4 py-1.5 font-bold uppercase text-xs tracking-wider transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
                 >
-                  [X]
+                  [X] CLOSE
                 </button>
               </div>
             </div>
@@ -503,64 +420,53 @@ Umsatzsteuer-Identifikationsnummer: DE268563088
 2. Grundprinzipien: Offline-First & Datensparsamkeit
 Die App "Macherwerk" ist als reine Offline-Anwendung konzipiert.
 - Lokalität: Alle von Ihnen erfassten Nahrungsmittel, Mahlzeiten, Kalorien, Nährwertprofile, Gewichtseinträge sowie freie Texteinträge werden ausschließlich auf Ihrem eigenen Speicherplatz in einer lokalen SQLite-Datenbank Ihres Android-Smartphones abgespeichert.
-- Keine Server-Übertragung: Es findet keine automatische Übertragung oder Synchronisation auf Cloud-Hoster, Webserver oder externe Netzwerke statt.
+- Keine Server-Übertragung der Profildaten: Es findet keine automatische Übertragung oder Synchronisation Ihrer persönlichen Profildaten (wie Name, Gewichtshistorie oder Benutzerprofil) auf Cloud-Hoster, Webserver oder externe Netzwerke statt.
 - Kein Account-Zwang: Sie können die App verwenden, ohne ein Benutzerkonto anzulegen.
 
-3. Kamera-Berechtigung (Foto-Nährwertanalyse via On-Device AI)
-Zur optionalen Foto-Erkennung von Lebensmitteln benötigt die App Zugriff auf die Kamera Ihres Mobilgeräts.
-- Zweck: Aufnahme der Speise zur sofortigen grafischen Interpretation der Essensportionen.
-- On-Device KI: Die gesamte Fotoauswertung, Segmentierung und Nährwertzuordnung wird lokal auf Ihrem Smartphone (On-Device AI) verarbeitet. Es findet kein Upload des Fotos an externe Web-Server oder externe LLM-Systeme statt. Das Foto wird nach dem Erkennungsvorgang unmittelbar wieder verworfen.
+3. Integration der OpenAI API für KI-gestützte Analysen
+Zur intelligenten Erkennung und Schätzung von Freitexteingaben oder Nahrungsmittelbeschreibungen nutzt die App eine datenschutzkonforme Netzanbindung an die offizielle OpenAI API (Schnittstelle).
+- Welche Daten werden übertragen?
+  Übertragen werden ausschließlich die von Ihnen manuell eingetragenen Beschreibungen der Mahlzeiten (Textbeschreibungen der Lebensmittel, Mengen und Zutaten).
+- Strikter Schutz personenbezogener Daten (Keine PII-Übertragung):
+  Es werden ABSOLUT KEINE personenbezogenen, sensiblen oder identifizierbaren Daten (wie Ihr Name, Ihre E-Mail-Adresse, Ihre physische Wohnadresse, Ihr Standort/GPS, IP-Adressen oder Geräte-IDs) an OpenAI übermittelt oder gesendet. Die Anfragen an die OpenAI API erfolgen vollkommen anonymisiert und ohne jeglichen Bezug zu Ihrer Identität oder Ihrem Gerät.
+- Datenverwendung durch OpenAI:
+  Gemäß den Richtlinien von OpenAI werden Daten, die über die offizielle API (Schnittstelle) übermittelt werden, nicht zum Training von OpenAI-Modellen verwendet und nach den geltenden Sicherheitsstandards von OpenAI verarbeitet.
 
-4. Keine Weitergabe an Dritte & Keine Werbe- oder Analyse-Tracker
-- Die App bindet keinerlei Werbenetzwerke (wie Google AdMob) oder Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
+4. Kamera-Berechtigung (Foto-Erkennung)
+Zur optionalen intelligenten Foto-Erkennung von Mahlzeiten fordert die App Zugriff auf die Kamera des Geräts an. Das aufgenommene Foto wird temporär on-device verarbeitet oder rein zur Lebensmittel- und Mengenschätzung im Rahmen des oben beschriebenen anonymisierten API-Schnittstellenzugriffs an OpenAI übermittelt. Es werden keine Profilbilder, persönliche Metadaten oder Gesichter gespeichert oder übertragen. Das Foto wird nach der Analyse sofort wieder gelöscht bzw. verworfen.
+
+5. Keine Weitergabe an sonstige Dritte & Keine Werbe- oder Analyse-Tracker
+- Abgesehen von der oben beschriebenen anonymisierten Lebensmittel-Nährwertanalyse über die Schnittstelle von OpenAI findet keinerlei Weitergabe von Daten an sonstige Dritte statt.
+- Die App bindet keinerlei kommerzielle Werbenetzwerke (wie Google AdMob) oder unautorisierte Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
 - Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
 
-5. Ausschluss medizinischer Beratung & KI-Unterstützung
+6. Ausschluss medizinischer Beratung & KI-Unterstützung
 - Kein medizinischer Ratgeber: Die App "Macherwerk" dient ausschließlich der Dokumentation im Rahmen eines Ernährungstagebuchs. Sie bietet keinerlei medizinische Beratung, therapeutische Ratschläge, Diagnosen oder Behandlungsempfehlungen an. Die App ist kein Medizinprodukt und hat keinen medizinischen Hintergrund. Suchen Sie bei gesundheitlichen Beeinträchtigungen oder Fragen zu Diäten und Ernährungstherapien stets qualifizierten medizinischen Rat bei einem Arzt oder Ernährungsberater.
-- KI als Erfassungshilfe: Die integrierten Künstliche-Intelligenz-Funktionen (z. B. Texterkennung oder optionale Foto-Analyse) dienen ausschließlich als technische Hilfestellung (Erfassungshilfe und Orientierung) bei der Protokollierung. Die Ergebnisse basieren auf Schätzwerten und sind unverbindlich. Sie sollten für keine medizinischen Entscheidungen (z. B. Medikamentendosierungen) herangezogen werden.
+- KI als Erfassungshilfe: Die integrierten Künstliche-Intelligenz-Funktionen (z. B. Texterkennung über die OpenAI API) dienen ausschließlich als technische Hilfestellung (Erfassungshilfe und Orientierung) bei der Protokollierung. Die Ergebnisse basieren auf Schätzwerten und sind unverbindlich. Sie sollten für keine medizinischen Entscheidungen (z. B. Medikamentendosierungen) herangezogen werden.
 
-6. Rechte des Nutzers (Auskunft und vollständige Löschung)
+7. Rechte des Nutzers (Auskunft und vollständige Löschung)
 Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
 - Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
 
-7. Version und Stand der Erklärung
-Stand: 05. Juni 2026 / Version 1.0.0`}
+8. Version und Stand der Erklärung
+Stand: 13. Juni 2026 / Version 1.1.0`}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm col-span-2">
               <div className="space-y-3">
-                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-cyan">Empfehlung für Play Console</span>
+                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-cyan">Play Store URL</span>
                 <p className="text-zinc-400 leading-relaxed font-sans">
-                  Sie können den obenstehenden Text direkt herauskopieren und im <strong>Google Play Console Formular "Datenvereinbarung & Datenschutzerklärung"</strong> einfügen. Die Angabe einer direkten HTTPS-URL ist im Store Pflicht. Verwenden Sie dafür diese Adresse im Browser:
+                  Diese Datenschutzerklärung ist direkt über die folgende Adresse öffentlich erreichbar und für das Google Play Console Formular einsatzbereit:
                 </p>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <div className="bg-zinc-950 p-2.5 text-xs font-mono select-all text-white border border-zinc-800 font-bold truncate flex-1 flex items-center justify-between">
-                    <span>https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk</span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={copyMacherwerkPrivacyUrl}
-                    className="bg-vibrant-cyan hover:bg-black border-2 border-black hover:border-vibrant-cyan hover:text-vibrant-cyan text-black px-3 py-2 font-bold uppercase text-[10px] tracking-wider transition-all flex items-center justify-center gap-1 shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
-                  >
-                    {copiedPrivacyUrl ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        Kopiert!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        Link Kopieren
-                      </>
-                    )}
-                  </button>
+                <div className="bg-zinc-950 p-2.5 text-xs font-mono select-all text-white border border-zinc-805 border-zinc-800 font-bold truncate">
+                  https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk
                 </div>
               </div>
 
               <div className="space-y-3">
                 <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-yellow font-sans">Sicherheitsversprechen</span>
                 <p className="text-zinc-400 leading-relaxed font-sans">
-                  Durch den konsequenten Ausschluss jeglicher externen Verhaltensverfolgung und den Verzicht auf Cloud-Datenbanken erfüllt diese Formulierung die restriktivsten Datenschutzprüfungen für gesundheitsrelevante Mobilanwendungen im Google Play Store.
+                  Durch den konsequenten Schutz personenbezogener Daten und den transparenten Ausschluss der Speicherung persönlicher Identifikationsdaten erfüllt diese Formulierung alle Google-Richtlinien für gesundheitsrelevante Apps im Google Play Store.
                 </p>
               </div>
             </div>

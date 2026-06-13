@@ -21,9 +21,15 @@ export function Hero({ company, appCount }: HeroProps) {
         <div className="absolute left-1/2 bottom-0 w-24 h-24 bg-black opacity-10 pointer-events-none rotate-45"></div>
         
         <div className="relative z-10 max-w-4xl">
-          <div className="inline-flex items-center gap-2 bg-black text-white font-mono text-[10px] sm:text-xs uppercase px-3 py-1.5 font-bold mb-6 border-b-2 border-r-2 border-vibrant-yellow">
-            <Shield className="w-4.5 h-4.5 text-vibrant-yellow" id="icon-shield-verified" />
-            <span>Google Play Offizieller Entwickler-Verify</span>
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 bg-black text-white font-mono text-[10px] sm:text-xs uppercase px-3 py-1.5 font-bold border-2 border-black">
+              <Shield className="w-4 h-4 text-vibrant-yellow" id="icon-shield-verified" />
+              <span>Google Play Offizieller Entwickler-Verify</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white text-black font-mono text-[10px] sm:text-xs uppercase px-3 py-1.5 font-bold border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+              <span className="text-vibrant-red font-bold">●</span>
+              <span>Kostengünstige & Professionelle App-Entwicklung</span>
+            </div>
           </div>
 
           <h2 className="text-[26.5px] min-[390px]:text-3xl sm:text-5xl md:text-6xl font-display font-black leading-tight text-black mb-6 uppercase tracking-tight break-words [hyphens:auto]">
