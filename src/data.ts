@@ -26,38 +26,40 @@ export const defaultCompanyInfo: CompanyInfo = {
   registerNumber: "",        // If registered, otherwise leave empty or "N/A"
   
   // Vision statement on the Hero Section
-  visionTitle: "Ernährungstracking. Intelligente Analysen. Perfekte Performance.",
-  visionSubtitle: "Gridwerk ist Ihr Partner für hochqualitative und kostengünstige App-Entwicklung aus Deutschland. Mit unserem aktuellen Highlight 'Macherwerk' revolutionieren wir das mobile Tracken Ihrer Fitness- und Gesundheitsziele durch innovative, datensparsame KI. Erfassen Sie Mahlzeiten in Rekordzeit und erhalten Sie sofortige Nährwert-Einblicke.",
-  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilincer. Wir spezialisieren uns auf die kostengünstige Erstellung von datensparsamen High-Performance-Lösungen für Mobilgeräte (Android/iOS) und das Web. Unser aktuelles Flaggschiff 'Macherwerk' bietet ein minimalistisches, datensicheres Ernährungstagebuch mit intelligenter KI-Verarbeitung."
+  visionTitle: "Türkei-Reise & Transit. Devisen-Monitore. Maximale Sicherheit.",
+  visionSubtitle: "Gridwerk ist Ihr Partner für professionelle und kostengünstige App-Entwicklung aus Deutschland. Mit unserem aktuellen Highlight 'SilaGuard Pro' bieten wir den unentbehrlichen Begleiter für Reisen in die Türkei und den Balkan-Transit: Devisen- & Zoll-Check, Live Grenz-Cams, KI-Sprachübersetzer und lokaler Sila-Tresor.",
+  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilincer. Wir spezialisieren uns auf die kostengünstige Erstellung von datensparsamen High-Performance-Lösungen für Mobilgeräte (Android/iOS) und das Web. Unser Flaggschiff 'SilaGuard' schützt Reisende auf der Sıla Yolu und bei Türkei-Reisen vor Zollstrafen, Wartezeiten und Orientierungsverlust."
 };
 
 export const defaultApps: AppInfo[] = [
   {
-    id: "macher-werk",
-    name: "Macherwerk",
-    tagline: "Intelligentes Ernährungstagebuch mit KI",
-    description: "Das ultimative mobile Ernährungstagebuch mit intelligenter Foto- und Texterkennung. Erfassen Sie Mahlzeiten in Rekordzeit, tracken Sie Nährwerte automatisch durch lokale KI-Analysen und erhalten Sie personalisierte Coaching-Tipps — 100% offline und datensparsam.",
-    category: "Gesundheit & Fitness",
-    tags: ["Ernährungstagebuch", "Künstliche Intelligenz", "Offline-Tracker", "Nährwert-Analyse"],
-    version: "1.0.0-stable",
-    fileSize: "7.2 MB",
+    id: "silaguard",
+    name: "SilaGuard Pro",
+    tagline: "Türkei-Reisebegleiter: Devisen, Zoll, Grenz-Cams & Translator",
+    description: "Der ultimative All-in-One Reisebegleiter für die Fahrt in die Türkei (Sıla Yolu) und den Balkan-Transit. Ausgestattet mit Devisen- & Gold-Monitor mit 10.000 € Limitprüfer, GPS-Routenplaner, Live-Grenzkameras, KI-Sprachübersetzer und sicherem Sila-Tresor für Ihre Reisedokumente — 100% datensparsam.",
+    category: "Reisen & Lokales",
+    tags: ["Sıla Yolu", "Türkei Reise", "Devisen & Gold", "Zoll-Helfer", "Grenz-Cams", "Sprachübersetzer", "Tresor"],
+    version: "2.1.0-stable",
+    fileSize: "18.4 MB",
     minAndroidVersion: "Android 8.0 (Oreo) oder höher",
-    releaseDate: "05.06.2026",
-    iconName: "Apple",
+    releaseDate: "2026",
+    iconName: "Shield",
     status: "Published",
-    packageName: "de.gridwerk.macherwerk",
-    googlePlayUrl: "https://play.google.com/store/apps/details?id=de.gridwerk.macherwerk",
+    packageName: "de.gridwerk.silaguard",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=de.gridwerk.silaguard",
     features: [
-      "Automatische Mahlzeitenerfassung per intelligenter Freitexteingabe",
-      "Lokale, blitzschnelle KI-Nährwertschätzung ohne Daten-Upload",
-      "Analysen für Kalorien, Makronährstoffe (Eiweiß, Kohlenhydrate, Fette) & Vitamine",
-      "Vollständiger Offline-Betrieb für maximale Privatsphäre ohne Tracker"
+      "Barmittel- & Devisen-Monitor: Bargeld- & Goldrechner mit Zoll-Freimengenwarnung (10.000 € Regel EU/Türkei)",
+      "Live Grenz-Cams: Videostreams der offiziellen Behörden (AMSS, MUP, MK) für Hinfahrt & Rückfahrt",
+      "Integrierter KI-Sprachübersetzer: Sprachausgabe (Speech-to-Text & TTS) für Türkisch, Serbisch, Bulgarisch uvm.",
+      "GPS Routen-Planer: Optimierte Balkan-Transitrouten (Ungarn, Kroatien, Nordmazedonien) mit Distanz- & Maut-Check",
+      "Sila-Tresor Pro: Verschlüsseltes lokales Archiv für Passdaten, Kennzeichen, ADR & Barmittel mit PDF-Export",
+      "Zoll-Kompass: Übersicht über Freimengen, Erlaubtes & Verbotenes (Lebensmittel, Zigaretten, Pflanzenschutz)"
     ]
   }
 ];
 
 export const defaultPrivacyConfig: PrivacyPolicyConfig = {
-  lastUpdated: "05. Juni 2026",
+  lastUpdated: "2026",
   collectsPersonalData: false,
   usesCookies: false,
   usesAdmob: false,

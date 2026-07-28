@@ -7,6 +7,148 @@ import { CompanyInfo, PrivacyPolicyConfig } from '../types';
 import { Mail, Phone, MapPin, Building2, User, HelpCircle, FileText, Check, Copy, ChevronDown, ChevronUp, Scale } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
+const silaguardPrivacyContent = `Datenschutzerklärung für die Android-App "SilaGuard Pro"
+(Package-ID: de.gridwerk.silaguard)
+
+1. Präambel & Verantwortliche Stelle
+Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Entwickler auf:
+
+Entwickler & Verantwortliche Stelle:
+Özgür Kilincer
+Gridwerk Softwareentwicklung
+Am Birket 1, 86650 Wemding, Deutschland
+E-Mail: Kilincer@outlook.com
+Tel: 01718484211
+Umsatzsteuer-Identifikationsnummer: DE268563088
+
+2. Grundprinzipien: Sila-Tresor & Datensparsamkeit (100% Offline-Speicher)
+Die Anwendung "SilaGuard Pro" ist auf höchstmöglichen Schutz Ihrer persönlichen Reisedokumente ausgelegt.
+- Lokale Datenspeicherung: Alle im "Sila-Tresor" hinterlegten Angaben (Name, Ausweis-/Passnummern, Ablaufdaten, KFZ-Kennzeichen, Fahrzeugdaten, ADR-Angaben sowie deklariertes Bargeld in Euro und Goldgewicht in Grammen) verbleiben ausschließlich lokal in der verschlüsselten Anwendungsdatenbank auf Ihrem eigenen Smartphone.
+- Keine Server-Übertragung der Tresordaten: Es findet keinerlei automatische Übertragung oder Synchronisation Ihrer vertraulichen Tresor- oder Ausweisdaten auf externe Cloud-Server statt.
+- Kein Registrierungszwang: Sie können die App ohne Erstellung eines Benutzerkontos nutzen.
+
+3. GPS-Standortfunktion (Routen-Planer & Distanz-Check)
+Zur Berechnung von Fahrtstrecken, voraussichtlichen Ankunftszeiten und Entfernungen zu den Grenzübergängen der Sıla Yolu (z. B. Röszke, Horgos, Gradina, Kapikule) fordert die App bei Aktivierung der Navigationsansicht Zugriff auf die GPS-Standortdaten Ihres Geräts an.
+- Der Standort wird ausschließlich temporär und lokal auf dem Smartphone verarbeitet.
+- Es werden keine Bewegungsprofile erstellt, gespeichert oder an den Entwickler oder Dritte übermittelt.
+
+4. KI- & Offline-Sprachübersetzer (Speech & Text Translator)
+Für die Übersetzung von Wörtern, Sätzen oder Spracheingaben an Mautstationen und Tankstellen nutzt die App eine datenschutzkonforme Schnittstelle.
+- Datenübertragung: Übertragen werden ausschließlich die reinen Texte oder Sprachsignale, die übersetzt werden sollen.
+- Keine PII: Es werden keine personenbezogenen Daten (wie Namen, Gerätekennungen, IP-Adressen oder Standorte) mitgesendet.
+- Audiodaten werden unmittelbar nach der Umwandlung in Text verworfen.
+
+5. Live Grenz-Cams (Verkehrs-Videostreams)
+Die Funktion "Live Grenz-Cams" ermöglicht die Anzeige öffentlicher Videostreams offizieller Behörden (z. B. AMSS Serbien, MUP Kroatien, MK Nordmazedonien).
+- Beim Aufrufen der Streams wird eine direkte Verbindung zum jeweiligen Server des Behördenanbieters aufgebaut.
+- SilaGuard speichert keine Videostreams und erhebt hierbei keine personenbezogenen Nutzerdaten.
+
+6. Kamera- & Mikrofon-Berechtigungen
+- Kamera: Wird ausschließlich zum Scannen von Dokumenten für den lokalen Sila-Tresor verwendet.
+- Mikrofon: Wird ausschließlich zur Spracheingabe für den Sprachübersetzer genutzt.
+- Bilder und Audiodaten verbleiben lokal bzw. werden nach der Übersetzung nicht gespeichert.
+
+7. Keine Werbe- oder Analytics-Tracker
+- Wir verzichten vollständig auf kommerzielle Werbenetzwerke (wie Google AdMob) oder unautorisierte Nutzungsanalysen (wie Firebase Analytics, Segment, Flurry).
+- Mobile-Advertising-IDs (AAID) werden weder erfasst noch weitergegeben.
+
+8. Haftungsausschluss: Keine Behörden-App
+- SilaGuard ist eine private Orientierungs- und Planungshilfe für Urlaubsreisen.
+- Die App ist keine offizielle Behörden-App der Zollverwaltung, Grenzpolizei oder Konsulate.
+- Sämtliche Angaben zu Devisen-Freimengen (10.000 € Regel), Gold-Freibeträgen, Mautgebühren und Einreisebestimmungen dienen als unverbindliche Richtwerte.
+
+9. Rechte des Nutzers (Vollständige Löschung)
+- Sie können alle im Sila-Tresor gespeicherten Daten jederzeit selbständig und unwiderruflich löschen, indem Sie die App-Daten in den Android-Systemeinstellungen zurücksetzen oder die App deinstallieren.
+
+10. Version und Stand der Erklärung
+Stand: Juli 2026 / Version 2.1.0-stable`;
+
+const silaguardAgbContent = `Nutzungsbedingungen & Allgemeine Geschäftsbedingungen (AGB) für SilaGuard Pro
+(Package-ID: de.gridwerk.silaguard)
+
+§ 1 Geltungsbereich und Anbieter
+(1) Diese Nutzungsbedingungen regeln die Nutzung der Mobilanwendung "SilaGuard Pro" (nachfolgend "App"), herausgegeben von:
+Gridwerk Softwareentwicklung
+Özgür Kilincer
+Am Birket 1, 86650 Wemding, Deutschland
+E-Mail: Kilincer@outlook.com
+
+(2) Mit dem Herunterladen, der Installation oder der Nutzung der App erklärt sich der Nutzer mit diesen Nutzungsbedingungen einverstanden.
+
+§ 2 Leistungsgegenstand und Zweck der App
+(1) SilaGuard Pro bietet Reisenden auf der Transitroute in die Türkei (Sıla Yolu) und durch den Balkan (Österreich, Slowenien, Kroatien, Serbien, Ungarn, Nordmazedonien, Bulgarien, Griechenland, Türkei) digitale Hilfswerkzeuge:
+- Barmittel- & Devisen-Monitor mit Goldwert- & Freimengenrechner
+- GPS-Transitroutenplaner
+- Live-Videostreams von Grenzkameras
+- Integrierter Sprachübersetzer für Türkisch, Serbisch, Bulgarisch, Ungarisch u.a.
+- Verschlüsselter lokaler "Sila-Tresor" für Fahrer- und Reisedokumente
+- Zoll-Kompass über Mitnahme- & Einfuhrbestimmungen
+
+§ 3 WICHTIGER HAFTUNGSAUSSCHLUSS – KEINE OFFIZIELLE BEHÖRDE
+(1) KEINE BEHÖRDE: Die App "SilaGuard Pro" ist ein privates Softwareprodukt von Gridwerk Softwareentwicklung. Die App ist KEINE offizielle Anwendung einer Zollbehörde, Grenzpolizei, Finanzbehörde, Botschaft oder eines Konsulats.
+(2) UNVERBINDLICHKEIT DER ANGABEN: Sämtliche in der App dargestellten Informationen, Tabellen, Zoll-Freimengen (z. B. die 10.000 € Bargeld-Anmeldepflicht in der EU und Transitstaaten), Gold-Freibeträge, Devisenkurse, Mautkosten, Grenzwartezeiten und Einreisevorschriften dienen ausschließlich der allgemeinen, unverbindlichen Information und Orientierung.
+(3) EIGENVERANTWORTUNG DES REISENDEN: Gesetze, Zollvorschriften, Freimengen und Grenzbestimmungen können sich in den Transitländern und im Zielland jederzeit verändern. Der Nutzer ist verpflichtet, sich vor und während der Reise bei den offiziellen Zoll- und Grenzbehörden der jeweiligen Länder zu informieren.
+(4) HAFTUNGSAUSSCHLUSS FÜR BUßGELDER & BESCHLAGNAHMUNGEN: Der Entwickler haftet nicht für Bußgelder, Strafen, Beschlagnahmungen von Bargeld oder Gegenständen, Einreiseverbote, Verzögerungen oder sonstige Schäden, die aus der Nutzung der App oder dem Vertrauen auf die in der App angezeigten Werte resultieren.
+
+§ 4 Barmittel-, Devisen- & Gold-Monitor
+(1) Der integrierte Devisen- und Gold-Monitor hilft dem Nutzer bei der eigenverantwortlichen Berechnung mitgeführter Zahlungsmittel.
+(2) Der Monitor ersetzt keine rechtssichere schriftliche oder mündliche Zollanmeldung. Die ordnungsgemäße Deklaration von Zahlungsmitteln ab 10.000 EUR obliegt einzig dem Reisenden.
+
+§ 5 Sila-Tresor & Datensicherheit
+(1) Der "Sila-Tresor" speichert eingegebene Ausweis-, Fahrzeug- und Bargelddaten ausschließlich lokal auf dem Endgerät des Nutzers.
+(2) Der Nutzer ist selbst für die Sicherung seines Smartphones (z.B. per PIN, Biometrie) und die Erstellung eigener Datensicherungen verantwortlich.
+
+§ 6 Geistiges Eigentum
+Alle Rechte an der App, den Quellcodes, Marken, Grafiken und Logos stehen ausschließlich Gridwerk Softwareentwicklung zu.
+
+§ 7 Schlussbestimmungen
+Es gilt das Recht der Bundesrepublik Deutschland.
+Stand: Juli 2026`;
+
+const silaguardStoreListingText = `==================================================
+GOOGLE PLAY STORE LISTING TEXT (SILAGUARD PRO)
+==================================================
+
+[APP-TITEL / APP NAME] (Max. 30 Zeichen)
+SilaGuard Pro - Türkei & Devisen
+
+[KURZBESCHREIBUNG / SHORT DESCRIPTION] (Max. 80 Zeichen)
+Dein Türkei & Sıla Yolu Reisebegleiter: Devisen, Zoll-Check, Grenz-Cams & Translator
+
+==================================================
+[VOLLSTÄNDIGE BESCHREIBUNG / FULL DESCRIPTION]
+==================================================
+SilaGuard Pro ist die unentbehrliche All-in-One-App für deine Urlaubsfahrt in die Türkei (Sıla Yolu) und den gesamten Balkan-Transit! Schütze dich vor teuren Zollstrafen, langen Wartezeiten an den Grenzen und Sprachbarrieren.
+
+★ BARMITTEL- & DEVISEN-MONITOR (LIMITPRÜFER)
+• Integrierter Devisen- & Goldrechner für Euro (EUR), Serbische Dinar (RSD), Türkische Lira (TRY), Bulgarische Lew (BGN) uvm.
+• Automatische Warnung vor der 10.000 € Bargeld- & Gold-Grenzregel der EU und der Transitländer.
+• Vermeide Bußgelder und Beschlagnahmungen an den Grenzen durch genaue Vorab-Berechnung deiner Freimengen.
+
+★ LIVE GRENZ-CAMS & STAU-CHECKER
+• Echte Live-Videostreams der wichtigsten Grenzübergänge (AMSS, MUP, MK-Proxy) für Hin- und Rückfahrt.
+• Röszke / Horgos, Batrovci, Gradina, Kapitan Andreevo, Kapikule uvm. auf einen Blick.
+
+★ GPS ROUTEN-PLANER & TRANSIT-MAP
+• Routenoptionen durch Ungarn, Kroatien, Serbien, Nordmazedonien & Bulgarien.
+• Live-Echtzeit-Distanz ab deinem Standort, Fahrzeitenschätzung & Maut-Hinweise.
+
+★ KI- & OFFLINE-SPRACHÜBERSETZER
+• Schnellübersetzung mit klarer Sprachausgabe (Speech-to-Text & TTS) für Türkisch, Serbisch, Bulgarisch, Ungarisch & Deutsch.
+• Perfekt für Mautstationen, Tankstellen, Werkstätten oder Grenzkontrollen.
+
+★ SILA-TRESOR PRO (DOKUMENTEN-ARCHIV)
+• Speichere Pässe, Führerschein, Fahrzeug-Kennzeichen, ADR & Barmittel sicher auf deinem Handy.
+• Inklusive PDF-Export für den Notfall & 100% lokaler Offline-Datenspeicher.
+
+★ ZOLL- & REGEL-KOMPASS
+• Was darf mit? Übersicht über Freimengen bei Lebensmitteln, Zigaretten, Alkohol, Pflanzenschutz & Geschenken.
+
+==================================================
+WICHTIGER RECHTLICHER HINWEIS:
+SilaGuard ist eine private Orientierungs- und Planungshilfe für Reisende und KEINE offizielle Behörde, Finanzberatung oder Zollstelle. Alle Angaben ohne Gewähr.
+==================================================`;
+
 interface FooterProps {
   company: CompanyInfo;
   privacy: PrivacyPolicyConfig;
@@ -15,14 +157,35 @@ interface FooterProps {
 export function Footer({ company, privacy }: FooterProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [showFullPrivacy, setShowFullPrivacy] = useState(false);
-  const [showMacherwerkPrivacy, setShowMacherwerkPrivacy] = useState(false);
+  
+  // SilaGuard App Legal Sections
+  const [showSilaGuardSection, setShowSilaGuardSection] = useState(false);
+  const [activeTab, setActiveTab] = useState<'privacy' | 'agb' | 'storetext'>('privacy');
+  
+  const [copiedPrivacyText, setCopiedPrivacyText] = useState(false);
+  const [copiedAgbText, setCopiedAgbText] = useState(false);
+  const [copiedStoreText, setCopiedStoreText] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#datenschutz-macherwerk') {
-        setShowMacherwerkPrivacy(true);
+      const hash = window.location.hash;
+      if (hash === '#datenschutz-silaguard' || hash === '#datenschutz-macherwerk') {
+        setShowSilaGuardSection(true);
+        setActiveTab('privacy');
         setTimeout(() => {
-          document.getElementById('macherwerk-privacy-section')?.scrollIntoView({ behavior: 'smooth' });
+          document.getElementById('silaguard-legal-section')?.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+      } else if (hash === '#agb-silaguard') {
+        setShowSilaGuardSection(true);
+        setActiveTab('agb');
+        setTimeout(() => {
+          document.getElementById('silaguard-legal-section')?.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
+      } else if (hash === '#storetext-silaguard') {
+        setShowSilaGuardSection(true);
+        setActiveTab('storetext');
+        setTimeout(() => {
+          document.getElementById('silaguard-legal-section')?.scrollIntoView({ behavior: 'smooth' });
         }, 120);
       }
     };
@@ -36,6 +199,24 @@ export function Footer({ company, privacy }: FooterProps) {
     navigator.clipboard.writeText(company.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const copyPrivacyText = () => {
+    navigator.clipboard.writeText(silaguardPrivacyContent);
+    setCopiedPrivacyText(true);
+    setTimeout(() => setCopiedPrivacyText(false), 2000);
+  };
+
+  const copyAgbText = () => {
+    navigator.clipboard.writeText(silaguardAgbContent);
+    setCopiedAgbText(true);
+    setTimeout(() => setCopiedAgbText(false), 2000);
+  };
+
+  const copyStoreText = () => {
+    navigator.clipboard.writeText(silaguardStoreListingText);
+    setCopiedStoreText(true);
+    setTimeout(() => setCopiedStoreText(false), 2000);
   };
 
   return (
@@ -212,26 +393,26 @@ export function Footer({ company, privacy }: FooterProps) {
 
               <button
                 type="button"
-                id="btn-toggle-macherwerk-datenschutz"
+                id="btn-toggle-silaguard-datenschutz"
                 onClick={() => {
-                  setShowMacherwerkPrivacy(!showMacherwerkPrivacy);
-                  if(!showMacherwerkPrivacy) {
+                  setShowSilaGuardSection(!showSilaGuardSection);
+                  if(!showSilaGuardSection) {
                     setTimeout(() => {
-                      document.getElementById('macherwerk-privacy-section')?.scrollIntoView({ behavior: 'smooth' });
+                      document.getElementById('silaguard-legal-section')?.scrollIntoView({ behavior: 'smooth' });
                     }, 100);
                   }
                 }}
                 className="w-full text-center bg-zinc-900 border-2 border-vibrant-cyan hover:bg-vibrant-cyan hover:text-black text-vibrant-cyan font-bold uppercase text-[11px] tracking-wider py-2 px-3 transition-all flex items-center justify-center gap-1.5 shadow-[3px_3px_0px_0px_rgba(0,240,255,0.15)] hover:shadow-none active:translate-x-0.5 active:translate-y-0.5 cursor-pointer select-none shrink-0"
               >
-                {showMacherwerkPrivacy ? (
+                {showSilaGuardSection ? (
                   <>
                     <ChevronUp className="w-4 h-4" />
-                    Macherwerk App-Datenschutz zuklappen
+                    SilaGuard Play Store Dokumente zuklappen
                   </>
                 ) : (
                   <>
                     <ChevronDown className="w-4 h-4" />
-                    App-Datenschutzerklärung (Macherwerk)
+                    App-Dokumente: SilaGuard (Datenschutz, AGB & Store-Text)
                   </>
                 )}
               </button>
@@ -319,31 +500,28 @@ export function Footer({ company, privacy }: FooterProps) {
               {/* Section 3 */}
               <div className="space-y-4 lg:col-span-2 border-t border-zinc-800 pt-6">
                 <div className="border-l-4 border-vibrant-red pl-3 space-y-1">
-                  <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">3. Spezifischer Datenschutz der Mobil-Anwendung "Macherwerk"</h5>
-                  <p className="text-zinc-500 text-[11px]">Berechtigungen, KI-Einsatz und Verarbeitung der Ernährungstagebuch-App</p>
+                  <h5 className="font-display font-bold text-sm sm:text-base text-white uppercase tracking-wider">3. Spezifischer Datenschutz der Mobil-Anwendung "SilaGuard Pro"</h5>
+                  <p className="text-zinc-500 text-[11px]">Berechtigungen, Sila-Tresor, GPS, Translator & Devisen-Monitor</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 space-y-0 text-xs sm:text-sm font-sans text-zinc-400 leading-relaxed">
                   <div className="space-y-3">
                     <p>
-                      <span className="text-vibrant-yellow font-bold uppercase font-mono text-xs block mb-1">A. Lokaler Datenspeicher (100% Offline-Betrieb):</span>
-                      Die Anwendung <strong>Macherwerk</strong> wurde als restriktiv privatsphärenfreundliche "Offline-First"-Anwendung konzipiert. Alle eingetragenen Fitnesswerte, Mahlzeiten, Gewichtseinträge, Kalorienaufzeichnungen und Nährwerte verbleiben und speichern sich ausschließlich in einer lokalen SQLite-Datenbank auf Ihrem Android-Handy. Es erfolgt keine automatische Speicherung Ihrer Profildaten auf Cloud-Servern.
+                      <span className="text-vibrant-yellow font-bold uppercase font-mono text-xs block mb-1">A. Lokaler Sila-Tresor (100% Offline-Speicher):</span>
+                      Die Anwendung <strong>SilaGuard Pro</strong> (Package-ID: <code>de.gridwerk.silaguard</code>) schützt Ihre Reise- und Ausweisdaten. Alle im Sila-Tresor gespeicherten Daten (Name, Pass- und Führerscheinnummern, KFZ-Kennzeichen, Bargeld- und Goldwerte) verbleiben ausschließlich lokal in einer verschlüsselten SQLite-Datenbank auf Ihrem Endgerät. Es erfolgt keinerlei Übertragung auf externe Cloud-Server.
                     </p>
                     <p>
-                      <span className="text-vibrant-cyan font-bold uppercase font-mono text-xs block mb-1">B. Integration der OpenAI API für KI-gestützte Analysen:</span>
-                      Zur intelligenten Erkennung und Schätzung von Freitexteingaben oder Nahrungsmittelbeschreibungen nutzt die App eine datenschutzkonforme Netzanbindung an die offizielle OpenAI API (Schnittstelle).
-                    </p>
-                    <p>
-                      Hierbei werden <strong>ausschließlich die reinen Beschreibungen der Lebensmittel und Mengenangaben</strong> übertragen, die für das Ernährungstagebuch analysiert werden sollen. Es werden <strong>keine personenbezogenen Daten</strong> wie E-Mail-Adresse, Name, Geräte-IDs, IP-Adressen oder Standortsdaten an OpenAI gesendet. Alle Abfragen an die OpenAI API erfolgen anonymisiert. OpenAI verwendet API-Anfragen gemäß eigenen Richtlinien nicht für das Training von KI-Modellen.
+                      <span className="text-vibrant-cyan font-bold uppercase font-mono text-xs block mb-1">B. KI-Sprachübersetzer & Sprachverarbeitung:</span>
+                      Zur Übersetzung von Freitexten und Spracheingaben nutzt die App eine datenschutzkonforme Schnittstelle. Es werden ausschließlich die zur Übersetzung erforderlichen Textfragmente oder Sprachmuster ohne PII (personenbezogene Identifikationsmerkmale) übertragen. Nach erfolgter Übersetzung werden Audiodaten sofort verworfen.
                     </p>
                   </div>
                   <div className="space-y-3">
                     <p>
-                      <span className="text-vibrant-red font-bold uppercase font-mono text-xs block mb-1">C. Kamera-Berechtigungen (Foto-Erkennung):</span>
-                      Zur optionalen intelligenten Foto-Erkennung von Mahlzeiten fordert die App Zugriff auf die Kamera des Geräts an. Das aufgenommene Foto wird temporär on-device verarbeitet oder rein zur Lebensmittel- und Mengenschätzung im Rahmen des oben beschriebenen anonymisierten API-Schnittstellenzugriffs an OpenAI übermittelt. Es werden keine Profilbilder, persönliche Metadaten oder Gesichter gespeichert. Das Foto wird nach der Analyse sofort wieder gelöscht bzw. verworfen.
+                      <span className="text-vibrant-red font-bold uppercase font-mono text-xs block mb-1">C. GPS-Standort & Live Grenz-Cams:</span>
+                      Der GPS-Standort wird rein lokal verarbeitet, um Entfernung und Fahrzeiten auf den Balkan-Transitrouten zu berechnen. Es werden keine Bewegungsprofile erstellt. Beim Aufruf der Live Grenz-Cams werden lediglich öffentliche Videostreams der zuständigen Verkehrsbehörden (AMSS, MUP etc.) direkt geladen.
                     </p>
                     <p>
-                      <span className="text-emerald-400 font-bold uppercase font-mono text-xs block mb-1">D. Konsequenter Ausschluss von Werbe- & Analyse-Trackern:</span>
-                      Wir binden keine kommerziellen Trackingsysteme oder Verhaltens-SDKs in unsere App ein. Wir verzichten vollständig auf Werbe-Netzwerke (wie Google AdMob) oder unautorisierte Nutzungsanalysen (wie Firebase Analytics, Segment, Flurry). Somit werden auch keine Mobile-Advertising-IDs an Datenbroker weitergegeben.
+                      <span className="text-emerald-400 font-bold uppercase font-mono text-xs block mb-1">D. Verzicht auf Werbe- & Analyse-Tracker:</span>
+                      Wir verzichten vollständig auf kommerzielle Werbenetzwerke (wie Google AdMob) oder Verhaltens-Tracking (wie Firebase Analytics). Ihre Werbe-ID wird weder ausgelesen noch weitergegeben.
                     </p>
                   </div>
                 </div>
@@ -376,97 +554,203 @@ export function Footer({ company, privacy }: FooterProps) {
         </div>
       )}
 
-      {/* Dedicated Macherwerk App-Specific Privacy Section */}
-      {showMacherwerkPrivacy && (
-        <div id="macherwerk-privacy-section" className="border-t-2 border-zinc-850 bg-zinc-950 pb-16 px-4 md:px-8 transition-all duration-300">
-          <div className="max-w-6xl mx-auto mt-12 border-3 border-vibrant-cyan bg-zinc-900 p-6 md:p-8 space-y-8 shadow-[8px_8px_0px_0px_rgba(0,240,255,1)] text-zinc-300">
+      {/* Dedicated SilaGuard App Legal & Store Documentation Section */}
+      {showSilaGuardSection && (
+        <div id="silaguard-legal-section" className="border-t-2 border-zinc-850 bg-zinc-950 pb-16 px-4 md:px-8 transition-all duration-300">
+          <div className="max-w-6xl mx-auto mt-12 border-3 border-vibrant-cyan bg-zinc-900 p-6 md:p-8 space-y-6 shadow-[8px_8px_0px_0px_rgba(0,240,255,1)] text-zinc-300">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-zinc-800 pb-4 gap-4">
               <div>
                 <h4 className="text-xl sm:text-2xl font-display font-black text-white tracking-tight uppercase flex items-center gap-2">
                   <Scale className="w-6 h-6 text-vibrant-cyan shrink-0" />
-                  Datenschutzerklärung: App "Macherwerk"
+                  SilaGuard Pro — Google Play Console Dokumente
                 </h4>
-                <p className="text-[10px] sm:text-xs text-zinc-500 font-mono mt-1">
-                  Direkt-Link für Google Play Console: <span className="text-vibrant-cyan underline break-all font-bold">https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk</span>
+                <p className="text-[10px] sm:text-xs text-zinc-400 font-mono mt-1">
+                  Rechtstexte & Store-Beschreibung (Package-ID: <span className="text-vibrant-cyan font-bold">de.gridwerk.silaguard</span>)
                 </p>
               </div>
               <div className="flex gap-2 shrink-0">
                 <button 
                   type="button"
-                  onClick={() => setShowMacherwerkPrivacy(false)}
+                  onClick={() => setShowSilaGuardSection(false)}
                   className="bg-vibrant-red hover:bg-black border-2 border-black hover:border-vibrant-red hover:text-vibrant-red text-white px-4 py-1.5 font-bold uppercase text-xs tracking-wider transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none shrink-0 cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
                 >
-                  [X] CLOSE
+                  [X] SCHLIESSEN
                 </button>
               </div>
             </div>
 
-            {/* Render formatted preview block */}
-            <div className="bg-zinc-950 p-4 font-mono text-xs text-zinc-400 border-2 border-black max-h-[350px] overflow-y-auto leading-relaxed whitespace-pre-wrap select-all">
-{`Datenschutzerklärung für die Android-App "Macherwerk"
-(Package-ID: de.gridwerk.macherwerk)
+            {/* Document Navigation Tabs */}
+            <div className="flex flex-wrap gap-2 border-b-2 border-zinc-800 pb-3">
+              <button
+                id="btn-tab-silaguard-privacy"
+                type="button"
+                onClick={() => {
+                  setActiveTab('privacy');
+                  window.location.hash = '#datenschutz-silaguard';
+                }}
+                className={`px-3 py-2 font-mono font-bold text-xs uppercase border-2 border-black transition-all cursor-pointer flex items-center gap-1.5 ${
+                  activeTab === 'privacy' 
+                    ? 'bg-vibrant-cyan text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                    : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
+                }`}
+              >
+                <FileText className="w-4 h-4" />
+                <span>1. Datenschutzerklärung (DSGVO)</span>
+              </button>
 
-1. Präambel & Verantwortliche Stelle
-Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Entwickler auf:
+              <button
+                id="btn-tab-silaguard-agb"
+                type="button"
+                onClick={() => {
+                  setActiveTab('agb');
+                  window.location.hash = '#agb-silaguard';
+                }}
+                className={`px-3 py-2 font-mono font-bold text-xs uppercase border-2 border-black transition-all cursor-pointer flex items-center gap-1.5 ${
+                  activeTab === 'agb' 
+                    ? 'bg-vibrant-yellow text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                    : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
+                }`}
+              >
+                <Scale className="w-4 h-4" />
+                <span>2. Nutzungsbedingungen (AGB)</span>
+              </button>
 
-Entwickler & Verantwortliche Stelle:
-Özgür Kilincer
-Gridwerk Softwareentwicklung
-Am Birket 1, 86650 Wemding, Deutschland
-E-Mail: Kilincer@outlook.com
-Tel: 01718484211
-Umsatzsteuer-Identifikationsnummer: DE268563088
-
-2. Grundprinzipien: Offline-First & Datensparsamkeit
-Die App "Macherwerk" ist als reine Offline-Anwendung konzipiert.
-- Lokalität: Alle von Ihnen erfassten Nahrungsmittel, Mahlzeiten, Kalorien, Nährwertprofile, Gewichtseinträge sowie freie Texteinträge werden ausschließlich auf Ihrem eigenen Speicherplatz in einer lokalen SQLite-Datenbank Ihres Android-Smartphones abgespeichert.
-- Keine Server-Übertragung der Profildaten: Es findet keine automatische Übertragung oder Synchronisation Ihrer persönlichen Profildaten (wie Name, Gewichtshistorie oder Benutzerprofil) auf Cloud-Hoster, Webserver oder externe Netzwerke statt.
-- Kein Account-Zwang: Sie können die App verwenden, ohne ein Benutzerkonto anzulegen.
-
-3. Integration der OpenAI API für KI-gestützte Analysen
-Zur intelligenten Erkennung und Schätzung von Freitexteingaben oder Nahrungsmittelbeschreibungen nutzt die App eine datenschutzkonforme Netzanbindung an die offizielle OpenAI API (Schnittstelle).
-- Welche Daten werden übertragen?
-  Übertragen werden ausschließlich die von Ihnen manuell eingetragenen Beschreibungen der Mahlzeiten (Textbeschreibungen der Lebensmittel, Mengen und Zutaten).
-- Strikter Schutz personenbezogener Daten (Keine PII-Übertragung):
-  Es werden ABSOLUT KEINE personenbezogenen, sensiblen oder identifizierbaren Daten (wie Ihr Name, Ihre E-Mail-Adresse, Ihre physische Wohnadresse, Ihr Standort/GPS, IP-Adressen oder Geräte-IDs) an OpenAI übermittelt oder gesendet. Die Anfragen an die OpenAI API erfolgen vollkommen anonymisiert und ohne jeglichen Bezug zu Ihrer Identität oder Ihrem Gerät.
-- Datenverwendung durch OpenAI:
-  Gemäß den Richtlinien von OpenAI werden Daten, die über die offizielle API (Schnittstelle) übermittelt werden, nicht zum Training von OpenAI-Modellen verwendet und nach den geltenden Sicherheitsstandards von OpenAI verarbeitet.
-
-4. Kamera-Berechtigung (Foto-Erkennung)
-Zur optionalen intelligenten Foto-Erkennung von Mahlzeiten fordert die App Zugriff auf die Kamera des Geräts an. Das aufgenommene Foto wird temporär on-device verarbeitet oder rein zur Lebensmittel- und Mengenschätzung im Rahmen des oben beschriebenen anonymisierten API-Schnittstellenzugriffs an OpenAI übermittelt. Es werden keine Profilbilder, persönliche Metadaten oder Gesichter gespeichert oder übertragen. Das Foto wird nach der Analyse sofort wieder gelöscht bzw. verworfen.
-
-5. Keine Weitergabe an sonstige Dritte & Keine Werbe- oder Analyse-Tracker
-- Abgesehen von der oben beschriebenen anonymisierten Lebensmittel-Nährwertanalyse über die Schnittstelle von OpenAI findet keinerlei Weitergabe von Daten an sonstige Dritte statt.
-- Die App bindet keinerlei kommerzielle Werbenetzwerke (wie Google AdMob) oder unautorisierte Analyse-Werkzeuge (wie Firebase Analytics, Segment, Flurry) ein.
-- Ihre Mobile-Advertising-ID (AAID) oder anderweitige Nutzungskennungen werden weder erfasst noch verarbeitet.
-
-6. Ausschluss medizinischer Beratung & KI-Unterstützung
-- Kein medizinischer Ratgeber: Die App "Macherwerk" dient ausschließlich der Dokumentation im Rahmen eines Ernährungstagebuchs. Sie bietet keinerlei medizinische Beratung, therapeutische Ratschläge, Diagnosen oder Behandlungsempfehlungen an. Die App ist kein Medizinprodukt und hat keinen medizinischen Hintergrund. Suchen Sie bei gesundheitlichen Beeinträchtigungen oder Fragen zu Diäten und Ernährungstherapien stets qualifizierten medizinischen Rat bei einem Arzt oder Ernährungsberater.
-- KI als Erfassungshilfe: Die integrierten Künstliche-Intelligenz-Funktionen (z. B. Texterkennung über die OpenAI API) dienen ausschließlich als technische Hilfestellung (Erfassungshilfe und Orientierung) bei der Protokollierung. Die Ergebnisse basieren auf Schätzwerten und sind unverbindlich. Sie sollten für keine medizinischen Entscheidungen (z. B. Medikamentendosierungen) herangezogen werden.
-
-7. Rechte des Nutzers (Auskunft und vollständige Löschung)
-Sie haben das Recht auf unentgeltliche Auskunft über Ihre gespeicherten Daten.
-- Datenlöschung: Da wir Ihre Daten nicht auf unseren Servern speichern, können Sie alle in der App abgelegten Daten jederzeit unwiderruflich selbst löschen. Dies geschieht durch Löschen der App-Daten in den Android-Systemeinstellungen oder durch die vollständige Deinstallation der App.
-
-8. Version und Stand der Erklärung
-Stand: 13. Juni 2026 / Version 1.1.0`}
+              <button
+                id="btn-tab-silaguard-storetext"
+                type="button"
+                onClick={() => {
+                  setActiveTab('storetext');
+                  window.location.hash = '#storetext-silaguard';
+                }}
+                className={`px-3 py-2 font-mono font-bold text-xs uppercase border-2 border-black transition-all cursor-pointer flex items-center gap-1.5 ${
+                  activeTab === 'storetext' 
+                    ? 'bg-vibrant-red text-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]' 
+                    : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
+                }`}
+              >
+                <Copy className="w-4 h-4" />
+                <span>3. Play Store Beschreibung (.txt)</span>
+              </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm col-span-2">
-              <div className="space-y-3">
-                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-cyan">Play Store URL</span>
-                <p className="text-zinc-400 leading-relaxed font-sans">
-                  Diese Datenschutzerklärung ist direkt über die folgende Adresse öffentlich erreichbar und für das Google Play Console Formular einsatzbereit:
-                </p>
-                <div className="bg-zinc-950 p-2.5 text-xs font-mono select-all text-white border border-zinc-805 border-zinc-800 font-bold truncate">
-                  https://remarkable-kleicha-c89014.netlify.app/#datenschutz-macherwerk
+            {/* Tab 1: Privacy Policy */}
+            {activeTab === 'privacy' && (
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 bg-zinc-950 p-3 border-2 border-zinc-800">
+                  <div className="text-xs font-mono">
+                    <span className="text-zinc-500 uppercase block font-bold">Direkt-URL für Play Console:</span>
+                    <span className="text-vibrant-cyan underline font-bold break-all">https://remarkable-kleicha-c89014.netlify.app/#datenschutz-silaguard</span>
+                  </div>
+                  <button
+                    id="btn-copy-silaguard-privacy"
+                    type="button"
+                    onClick={copyPrivacyText}
+                    className="bg-vibrant-cyan hover:bg-white text-black font-mono font-black text-xs uppercase px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer shrink-0 flex items-center gap-1.5"
+                  >
+                    {copiedPrivacyText ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-700" />
+                        <span>Text Kopiert!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>Datenschutz Kopieren</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <div className="bg-zinc-950 p-4 font-mono text-xs text-zinc-300 border-2 border-black max-h-[420px] overflow-y-auto leading-relaxed whitespace-pre-wrap select-all">
+                  {silaguardPrivacyContent}
                 </div>
               </div>
+            )}
 
-              <div className="space-y-3">
-                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-yellow font-sans">Sicherheitsversprechen</span>
-                <p className="text-zinc-400 leading-relaxed font-sans">
-                  Durch den konsequenten Schutz personenbezogener Daten und den transparenten Ausschluss der Speicherung persönlicher Identifikationsdaten erfüllt diese Formulierung alle Google-Richtlinien für gesundheitsrelevante Apps im Google Play Store.
+            {/* Tab 2: Terms of Service / AGB */}
+            {activeTab === 'agb' && (
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 bg-zinc-950 p-3 border-2 border-zinc-800">
+                  <div className="text-xs font-mono">
+                    <span className="text-zinc-500 uppercase block font-bold">Direkt-URL für AGB / Nutzungsbedingungen:</span>
+                    <span className="text-vibrant-yellow underline font-bold break-all">https://remarkable-kleicha-c89014.netlify.app/#agb-silaguard</span>
+                  </div>
+                  <button
+                    id="btn-copy-silaguard-agb"
+                    type="button"
+                    onClick={copyAgbText}
+                    className="bg-vibrant-yellow hover:bg-white text-black font-mono font-black text-xs uppercase px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer shrink-0 flex items-center gap-1.5"
+                  >
+                    {copiedAgbText ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-700" />
+                        <span>Text Kopiert!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>AGB Kopieren</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <div className="bg-zinc-950 p-4 font-mono text-xs text-zinc-300 border-2 border-black max-h-[420px] overflow-y-auto leading-relaxed whitespace-pre-wrap select-all">
+                  {silaguardAgbContent}
+                </div>
+              </div>
+            )}
+
+            {/* Tab 3: Play Store Listing Text (.txt) */}
+            {activeTab === 'storetext' && (
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 bg-zinc-950 p-3 border-2 border-zinc-800">
+                  <div className="text-xs font-mono">
+                    <span className="text-zinc-500 uppercase block font-bold">Play Console Store Listing Text (.txt Format):</span>
+                    <span className="text-vibrant-red font-bold">Bereit zum direkten Einkopieren in die Google Play Console</span>
+                  </div>
+                  <button
+                    id="btn-copy-silaguard-storetext"
+                    type="button"
+                    onClick={copyStoreText}
+                    className="bg-vibrant-red hover:bg-white text-white hover:text-black font-mono font-black text-xs uppercase px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer shrink-0 flex items-center gap-1.5"
+                  >
+                    {copiedStoreText ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-400" />
+                        <span>Store-Text Kopiert!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-4 h-4" />
+                        <span>Store-Text Kopieren</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <div className="bg-zinc-950 p-4 font-mono text-xs text-vibrant-cyan border-2 border-black max-h-[420px] overflow-y-auto leading-relaxed whitespace-pre-wrap select-all">
+                  {silaguardStoreListingText}
+                </div>
+              </div>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm pt-2">
+              <div className="space-y-2">
+                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-cyan">
+                  Google Play Console Vorlage
+                </span>
+                <p className="text-zinc-400 leading-relaxed font-sans text-xs">
+                  Sämtliche Rechtstexte und Store-Kopiervorlagen sind DSGVO-konform strukturiert und erfüllen die Richtlinien von Google Play für Reise- und Grenzhilfe-Apps.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="font-display font-bold uppercase text-white tracking-widest text-[11px] block border-b border-zinc-800 pb-1 text-vibrant-yellow">
+                  Haftungsausschluss & Transparenz
+                </span>
+                <p className="text-zinc-400 leading-relaxed font-sans text-xs">
+                  Klar formulierte Trennung von behördlichen Stellen zur Vermeidung von Irreführung im Play Store.
                 </p>
               </div>
             </div>
