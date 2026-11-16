@@ -1,0 +1,46 @@
+Nutzungsbedingungen & Allgemeine Geschäftsbedingungen (AGB) für SilaGuard
+(Package-ID: com.gridwerk.silaguard)
+
+§ 1 Geltungsbereich und Anbieter
+(1) Diese Nutzungsbedingungen regeln die Nutzung der Mobilanwendung "SilaGuard" (nachfolgend "App"), herausgegeben von:
+Gridwerk Softwareentwicklung
+Özgür Kilincer
+Am Birket 1, 86650 Wemding, Deutschland
+E-Mail: kilincerto@gmail.com
+
+(2) Mit dem Herunterladen, der Installation oder der Nutzung der App erklärt sich der Nutzer mit diesen Nutzungsbedingungen einverstanden.
+
+§ 2 Leistungsgegenstand und Lokale Ausführung
+(1) SilaGuard bietet Reisenden auf der Transitroute in die Türkei (Sıla Yolu) und durch den Balkan digitale Hilfswerkzeuge.
+(2) Die App wird zu 100% lokal auf dem Endgerät des Nutzers ausgeführt. Vertrauliche Daten verbleiben ausschließlich lokal auf dem Smartphone.
+
+§ 3 WICHTIGER HAFTUNGSAUSSCHLUSS – REINE PRIVATE HILFESTELLUNG, KEINE ZOLL-APP, KEINE BEHÖRDE, ALLE ANGABEN OHNE GEWÄHR
+(1) REINE HILFESTELLUNG: SilaGuard dient rein als unverbindliche private Hilfestellung und Orientierungshilfe für Urlauber. Die App bietet keine rechtliche, steuerliche oder behördliche Beratung.
+(2) KEINE ZOLL-APP / KEINE BEHÖRDE: Die App "SilaGuard" ist ein rein privates Softwareprodukt von Gridwerk Softwareentwicklung. Die App ist KEINE offizielle Anwendung einer Zollbehörde, Grenzpolizei, Finanzbehörde, Botschaft oder eines Konsulats.
+(3) ALLE ANGABEN OHNE GEWÄHR: Sämtliche in der App dargestellten Informationen, Devisengrenzen (z. B. die 10.000 € Bargeld-Anmeldepflicht der EU und Transitstaaten), Gold-Freibeträge, Wechselkurse, Mautkosten, Grenzwartezeiten und Einreisevorschriften dienen ausschließlich der allgemeinen, unverbindlichen Orientierung. Alle Angaben erfolgen ausdrücklich OHNE GEWÄHR.
+(4) EIGENVERANTWORTUNG DES REISENDEN: Gesetze, Zollvorschriften, Freimengen und Grenzbestimmungen können sich jederzeit ändern. Der Nutzer ist verpflichtet, sich vor und während der Reise bei den offiziellen Zoll- und Grenzbehörden der jeweiligen Länder zu informieren.
+(5) HAFTUNGSAUSSCHLUSS FÜR BUßGELDER & BESCHLAGNAHMUNGEN: Der Entwickler haftet nicht für Bußgelder, Strafen, Beschlagnahmungen von Bargeld oder Gegenständen, Einreiseverbote, Verzögerungen oder sonstige Schäden, die aus der Nutzung der App oder dem Vertrauen auf die in der App angezeigten Werte resultieren.
+
+§ 4 In-App-Käufe, Google Play Saisonpass (9,99 €) & Widerrufsrecht
+(1) LEISTUNGSUMFANG SAISONPASS: Der Nutzer hat die Möglichkeit, über das Google Play In-App-Billing System einen digitalen "Saisonpass" zum Preis von 9,99 € (inkl. MwSt.) zu erwerben. Der Saisonpass schaltet die erweiterten App-Funktionen (Sila-Tresor Dokumenten-Archiv, Belegscanner und KI-Sprachübersetzer) frei.
+(2) ZAHLUNGSABWICKLUNG ÜBER GOOGLE PLAY: Der Kauf und die Abrechnung erfolgen ausschließlich über das Benutzerkonto des Nutzers beim Google Play Store (Google Ireland Limited / Google LLC) gemäß den Nutzungsbedingungen von Google Play.
+(3) WIDERRUFSBELEHRUNG FÜR DIGITALE INHALTE:
+    - Gesetzliches Widerrufsrecht: Verbrauchern steht beim Kauf von digitalen Inhalten und Dienstleistungen grundsätzlich ein gesetzliches 14-tägiges Widerrufsrecht zu.
+    - Abwicklung über Google Play: Da der Kaufvertrag über den Google Play Store geschlossen und abgewickelt wird, erfolgt die Ausübung des Widerrufsrechts sowie die Erstattung von Zahlungen direkt über die dafür vorgesehenen Mechanismen des Google Play Stores (über das Google-Konto / Bestellverlauf unter play.google.com).
+    - Vorzeitiges Erlöschen des Widerrufsrechts (§ 356 Abs. 5 BGB): Das Widerrufsrecht erlischt bei Verträgen über digitale Inhalte vorzeitig, wenn die Ausführung des Vertrags begonnen hat, nachdem der Nutzer im Bestellvorgang von Google Play ausdrücklich zugestimmt hat, dass mit der Ausführung vor Ablauf der Widerrufsfrist begonnen wird, und er seine Kenntnis davon bestätigt hat, dass er durch seine Zustimmung sein Widerrufsrecht verliert.
+    - 48-Stunden-Erstattungsservice: Unabhängig davon bietet Google Play über den eigenen Kundenservice (Google Play Hilfe) eine unkomplizierte Frist von 48 Stunden nach dem Kauf für direkte Rückerstattungsanträge an.
+
+§ 5 Barmittel-, Devisen- & Gold-Monitor
+(1) Der integrierte Devisen- und Gold-Monitor hilft dem Nutzer bei der eigenverantwortlichen Berechnung mitgeführter Zahlungsmittel.
+(2) Der Monitor ersetzt keine rechtssichere schriftliche oder mündliche Zollanmeldung. Die ordnungsgemäße Deklaration von Zahlungsmitteln ab 10.000 EUR obliegt einzig dem Reisenden.
+
+§ 6 Sila-Tresor & lokale Datensicherheit
+(1) Der "Sila-Tresor" speichert eingegebene Ausweis-, Fahrzeug- und Bargelddaten ausschließlich lokal auf dem Endgerät des Nutzers.
+(2) Der Nutzer ist selbst für die Sicherung seines Smartphones (z.B. per PIN, Biometrie) und die Erstellung eigener Datensicherungen verantwortlich.
+
+§ 7 Geistiges Eigentum
+Alle Rechte an der App, den Quellcodes, Marken, Grafiken und Logos stehen ausschließlich Gridwerk Softwareentwicklung zu.
+
+§ 8 Schlussbestimmungen
+Es gilt das Recht der Bundesrepublik Deutschland.
+Stand: August 2026

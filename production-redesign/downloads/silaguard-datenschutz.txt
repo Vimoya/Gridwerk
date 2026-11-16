@@ -1,0 +1,65 @@
+Datenschutzerklärung für die Android-App "SilaGuard"
+(Package-ID: com.gridwerk.silaguard)
+
+1. Präambel & Verantwortliche Stelle
+Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und die Zwecke der Erhebung und Verwendung personenbezogener Daten durch den verantwortlichen Entwickler auf:
+
+Entwickler & Verantwortliche Stelle:
+Özgür Kilincer
+Gridwerk Softwareentwicklung
+Am Birket 1, 86650 Wemding, Deutschland
+E-Mail: kilincerto@gmail.com
+Tel: 01718484211
+Umsatzsteuer-Identifikationsnummer: DE268563088
+
+2. Grundprinzipien: 100% Lokale Ausführung & Datensparsamkeit (Offline-First)
+Die Anwendung "SilaGuard" ist als 100% lokale Anwendung konzipiert und schützt Ihre persönlichen Reisedokumente und Finanzdaten.
+- Lokale Datenspeicherung: Alle im "Sila-Tresor" hinterlegten Angaben (Name, Ausweis-/Passnummern, Ablaufdaten, KFZ-Kennzeichen, Fahrzeugdaten, ADR-Angaben sowie deklariertes Bargeld in Euro und Goldgewicht in Grammen) verbleiben ausschließlich lokal in der verschlüsselten Anwendungsdatenbank auf Ihrem eigenen Smartphone.
+- Keine Server-Übertragung der Tresordaten: Es findet keinerlei automatische Übertragung oder Synchronisation Ihrer vertraulichen Tresor- oder Ausweisdaten auf externe Cloud-Server statt.
+- Kein Registrierungszwang: Sie können die App ohne Erstellung eines Benutzerkontos nutzen.
+
+3. In-App-Käufe & Google Play Billing SDK (Saisonpass 9,99 €)
+Die App bietet optional den digitalen Kauf eines "Saisonpass" zum Preis von 9,99 € (inkl. MwSt.) über den Google Play Store an.
+- Abwicklung über Google Play: Die Abwicklung des In-App-Kaufs erfolgt ausschließlich über das offizielle Google Play In-App Billing SDK (Google Ireland Limited / Google LLC).
+- Keine Verarbeitung von Zahlungsdaten durch den Entwickler: Der Entwickler erhält und verarbeitet zu keinem Zeitpunkt Ihre Kreditkarten-, Bank- oder Zahlungsdaten. Google stellt lediglich ein anonymisiertes Bestätigungstoken zur Freischaltung der Premium-Funktionen (Sila-Tresor & Sprachübersetzer) bereit.
+
+4. GPS-Standortfunktion, Google Maps Navigation & Routen-Planer
+Zur Berechnung von Fahrtstrecken, voraussichtlichen Ankunftszeiten, Grenz-Distanzen und zur Weiterleitung an Google Maps Navigation fordert die App bei Aktivierung der Navigationsfunktion Zugriff auf den GPS-Standort Ihres Geräts an.
+- Der Standort wird ausschließlich temporär und lokal auf Ihrem Smartphone verarbeitet.
+- Beim Starten der Navigation wird die gewählte Route direkt an die Google Maps App auf Ihrem Gerät übergeben.
+- Es werden keine Bewegungsprofile erstellt, gespeichert oder an den Entwickler oder Dritte übermittelt.
+
+5. KI- & Offline-Sprachübersetzer (Speech & Text Translator)
+Für die Übersetzung von Wörtern, Sätzen oder Spracheingaben an Mautstationen und Tankstellen nutzt die App eine datenschutzkonforme Schnittstelle.
+- Datenübertragung: Übertragen werden ausschließlich die reinen Texte oder Sprachsignale, die übersetzt werden sollen.
+- Keine PII: Es werden keine personenbezogenen Daten (wie Namen, Gerätekennungen, IP-Adressen oder Standorte) mitgesendet.
+- Audiodaten werden unmittelbar nach der Umwandlung in Text verworfen.
+
+6. Live Grenz-Cams (Verkehrs-Videostreams) & KI-Verkehrsdichte-Schätzung
+Die Funktion "Live Grenz-Cams" ermöglicht die Anzeige öffentlicher Videostreams externer Kamera-Anbieter.
+- Beim Aufrufen der Streams wird eine direkte Verbindung zum jeweiligen Server des externen Anbieters aufgebaut.
+- SilaGuard speichert keine Videostreams und erhebt hierbei keine personenbezogenen Nutzerdaten.
+- Zusätzlich wird die geschätzte Verkehrsdichte (niedrig/mittel/hoch) an ausgewählten Grenzübergängen angezeigt. Diese Einschätzung wird serverseitig durch eine automatisierte, alle 30 Minuten laufende Cloud-Funktion erstellt, die Einzelbilder der öffentlichen Grenz-Webcams direkt vom Kamera-Server abruft und zur Analyse an Google Gemini (Firebase AI, Google Ireland Ltd.) übermittelt. Dieser Vorgang findet ausschließlich serverseitig statt und involviert weder das Gerät noch personenbezogene Daten des Nutzers; das Ergebnis wird zentral gespeichert und allen Nutzern gemeinsam angezeigt.
+
+7. Kamera- & Mikrofon-Berechtigungen (Belegscanner, Tresor & Sprachübersetzer)
+- Transparente Kamera-Berechtigungsabfrage (Belegscanner & Dokumentenscanner): Die Kamera wird ausschließlich zum Scannen von Quittungen, Mautbelegen, Fahrzeugpapieren und Pässen für den verschlüsselten lokalen Sila-Tresor verwendet. Vor dem ersten Kamerazugriff zeigt die App eine explizite Berechtigungsaufforderung und Erklärung an. Alle eingescannten Belege verbleiben grundsätzlich zu 100% lokal auf Ihrem Smartphone.
+- Mikrofon: Wird ausschließlich zur Spracheingabe für den Sprachübersetzer genutzt (Speech-to-Text).
+- Sila-Tresor: Alle Dokumentfotos und Scans werden ausschließlich lokal auf dem Gerät verarbeitet und gespeichert. Es findet keine Übermittlung von Tresor-Fotos an Google, DeepL oder sonstige Dritte statt.
+- Optionaler KI-Zoll-Chat (PRO-Funktion): Gibt der Nutzer im Zoll-Chat-Tab eine eigene Frage ein, wird dieser Text zur Einschätzung an Google Gemini (Firebase AI, Google Ireland Ltd.) übermittelt. Zusätzlich kann der Nutzer optional ein Foto eines Gegenstands aufnehmen, das zur zollrechtlichen Einschätzung ebenfalls an Google Gemini übermittelt wird. Diese Verarbeitung erfolgt sitzungsspezifisch zur Beantwortung der jeweiligen Anfrage und wird nicht dauerhaft bei Google gespeichert. Reicht die lokale Freimengen-Übersicht nicht aus, kann zusätzlich eine Google-Websuche auf offiziellen Behördenseiten durchgeführt werden. Es gilt die Datenschutzerklärung von Google (policies.google.com/privacy).
+- Optionale Übersetzung (PRO-Funktion): Der zu übersetzende Text wird über eine geschützte Server-Funktion an DeepL SE, Köln (api-free.deepl.com) übermittelt. Es gilt die Datenschutzerklärung von DeepL (www.deepl.com/privacy).
+- Ohne aktive Nutzung dieser optionalen PRO-Funktionen werden weder Belegfotos, Dokumentenscans noch Audiodaten auf Cloud-Server hochgeladen oder an Dritte weitergegeben.
+
+8. Keine Werbe- oder Analytics-Tracker
+- Wir verzichten vollständig auf kommerzielle Werbenetzwerke (wie Google AdMob) oder unautorisierte Nutzungsanalysen (wie Firebase Analytics, Segment, Flurry).
+- Mobile-Advertising-IDs (AAID) werden weder erfasst noch weitergegeben.
+
+9. AUSDRÜCKLICHER HAFTUNGSAUSSCHLUSS: REINE PRIVATE HILFESTELLUNG, KEINE ZOLL-APP, KEINE BEHÖRDE & ALLE ANGABEN OHNE GEWÄHR
+- SilaGuard dient ausschließlich als reine private Hilfestellung, Orientierungshilfe und Reisetagebuch ohne Rechtsverbindlichkeit.
+- Die App ist KEINE offizielle Behörden-App der Zollverwaltung, Grenzpolizei, Finanzbehörden oder Konsulate.
+- Alle Angaben zu Devisen-Freimengen (z. B. die 10.000 € Regel der EU und Transitländern), Gold-Freibeträgen, Mautgebühren, Wartezeiten und Einreisebestimmungen sind unverbindlich und erfolgen ausdrücklich OHNE GEWÄHR für Richtigkeit, Vollständigkeit oder Aktualität.
+
+10. Rechte des Nutzers (Vollständige Löschung)
+- Sie können alle im Sila-Tresor gespeicherten Daten jederzeit selbständig und unwiderruflich löschen, indem Sie die App-Daten in den Android-Systemeinstellungen zurücksetzen oder die App deinstallieren.
+
+11. Version und Stand der Erklärung
+Stand: August 2026 / Version 1.2

@@ -1,0 +1,49 @@
+==================================================
+GOOGLE PLAY STORE LISTING TEXT (SILAGUARD)
+==================================================
+
+[APP-TITEL / APP NAME] (Max. 30 Zeichen)
+SilaGuard – Sıla Yolu
+
+[KURZBESCHREIBUNG / SHORT DESCRIPTION] (Max. 80 Zeichen)
+Sıla Yolu: Zoll, Grenzkameras, Devisenrechner & Reise-Übersetzer
+
+==================================================
+[VOLLSTÄNDIGE BESCHREIBUNG / FULL DESCRIPTION]
+==================================================
+SilaGuard ist dein digitaler Begleiter für die Sıla Yolu – die Balkan- und Türkeiroute. Schütze dich vor teuren Zollstrafen, langen Wartezeiten an den Grenzen und Sprachbarrieren. Die App läuft 100% lokal auf deinem Smartphone – deine Daten bleiben privat!
+
+★ BARMITTEL- & DEVISEN-MONITOR (LIMITPRÜFER)
+• Integrierter Devisen- & Goldrechner für Euro (EUR), Serbische Dinar (RSD), Türkische Lira (TRY), Bulgarische Lew (BGN) uvm.
+• Automatische Warnung vor der 10.000 € Bargeld- & Gold-Grenzregel der EU und der Transitländer.
+• Vermeide Bußgelder und Beschlagnahmungen an den Grenzen durch genaue Vorab-Berechnung deiner Freimengen.
+
+★ LIVE GRENZ-CAMS & STAU-CHECKER
+• Echte Live-Videostreams der wichtigsten Grenzübergänge für Hin- und Rückfahrt.
+• Röszke / Horgos, Batrovci, Gradina, Kapitan Andreevo, Kapikule uvm. auf einen Blick.
+
+★ GPS ROUTEN-PLANER & GOOGLE MAPS TRANSIT
+• Optimierte Transitrouten durch Ungarn, Kroatien, Serbien, Nordmazedonien & Bulgarien.
+• Nahtlose Übergabe an Google Maps Navigation für Live-Turn-by-Turn Navigation.
+• Live-Echtzeit-Distanz ab deinem Standort, Fahrzeitenschätzung & Maut-Hinweise.
+
+★ KI- & OFFLINE-SPRACHÜBERSETZER (SAISONPASS)
+• Schnellübersetzung mit klarer Sprachausgabe (Speech-to-Text & TTS) für Türkisch, Serbisch, Bulgarisch, Ungarisch & Deutsch.
+• Perfekt für Mautstationen, Tankstellen, Werkstätten oder Grenzkontrollen.
+
+★ SILA-TRESOR PRO & BELEGSCANNER (SAISONPASS)
+• Integrierter Dokumenten- & Belegscanner: Mautquittungen, Pässe, Führerschein, Fahrzeug-Kennzeichen & ADR sicher abfotografieren.
+• Transparente Berechtigungsabfrage vor Kameranutzung.
+• 100% lokaler Offline-Datenspeicher: Alle Belege & Scans verbleiben ausschließlich auf deinem Smartphone!
+• Inklusive PDF-Export für den Notfall.
+
+★ IN-APP-KAUF: GOOGLE PLAY SAISONPASS (9,99 €)
+• Schalte den unbegrenzten KI-Sprachübersetzer und den verschlüsselten Sila-Tresor mit dem einmaligen Saisonpass für nur 9,99 € (inkl. MwSt.) direkt über die Google Play Abrechnung frei.
+
+★ ZOLL- & REGEL-KOMPASS
+• Was darf mit? Übersicht über Freimengen bei Lebensmitteln, Zigaretten, Alkohol, Pflanzenschutz & Geschenken.
+
+==================================================
+WICHTIGER RECHTLICHER HINWEIS:
+SilaGuard ist eine reine private Hilfestellung, Orientierungs- und Planungshilfe für Reisende. SilaGuard ist KEINE offizielle Zoll-App, KEINE Behörden-App und steht in keiner Verbindung zu Grenzkontrollen, Finanzbehörden oder Ministerien. Alle Angaben, Devisengrenzen (10.000 € Regel) und Informationen dienen als unverbindliche Orientierung und erfolgen ausdrücklich OHNE GEWÄHR.
+==================================================
