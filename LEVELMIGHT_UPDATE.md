@@ -1,6 +1,17 @@
-# LEVELMIGHT website update – prepared, NOT LIVE
-Netlify authenticated via owner-selected Google login. Actual site remarkable-kleicha-c89014, project 67f5114a-fe6e-484a-9ec8-5ddea7f73651. Current deployment 6a716553488e0105df585373 (Aug 4), linked private source kilincer1984/remarkable-kleicha-c89014 is inaccessible through current GitHub connector and session. Vimoya/Gridwerk main is older source; do NOT deploy its rebuilt dist over current site.
+# LEVELMIGHT website update — published 2026-11-16
 
-releases/gridwerk-levelmight-update.zip is based on the actual downloaded production deployment. Preserves deployed SilaGuard fields/documents/handlers and Google ownership verification file. Adds LEVELMIGHT section through existing React runtime, correct www legal/deletion/support links, health disclaimer, AI limits and server-side data-processing summary; corrects generic zero-data/Google-certification claims and obsolete Macherwerk deletion claim; removes external font import. Original files retained in zip for rollback. JS syntax passed; separate TSX addition build/TypeScript pass. Visual browser preview and live validation still pending. Existing unrelated legal/provider clauses remain unverified.
+Production: https://remarkable-kleicha-c89014.netlify.app/#levelmight
+Netlify published deploy: 6afae46213bdde90456ed1be (12:09 UTC).
+User explicitly authorized unlinking the Git repository and publishing live. Netlify repository linkage was removed; updates now use manual deploys. No Google Play submission was made.
 
-Deployment blocked: auto-review rejected unlinking GitHub on 2026-11-16 as consequential production configuration change lacking explicit authorization. No unlink executed, no upload or publication, no token created. Ask owner whether to disconnect the repository for manual deployment; explain automatic GitHub publishing stops, site/domain retained. Do not retry without explicit authorization. Alternative owner grants access to existing source. No Play Console changes; Play submission/publication always needs separate owner approval.
+## Exact deployed artifact
+releases/gridwerk-levelmight-update.zip contains the corrected production bundle, including case-sensitive index.html asset references. It replaces the earlier preparation archive. The previous attempt 6afae42821780b7da833f0e1 was immediately superseded after detecting stale script references.
+
+This archive is based on the actual August 4 Netlify production files, preserving the existing SilaGuard contents and handlers. The TSX files in this branch are reference implementation against an older public source checkout, not a fully synchronized copy of production. Do not deploy a fresh build of that old checkout without reconciling production first.
+
+## Changes and verification
+Added LEVELMIGHT feature overview, webapp link, Android-in-preparation status, health and AI estimate notices, server-side data/account-deletion explanation, and links to app privacy, terms, community rules, health notices, reporting, account deletion and imprint. Corrected generic studio privacy wording and removed external Google Fonts import. Existing SilaGuard contents preserved.
+
+Verified published deployment status and production browser content, including new section and link destinations. Captured live screenshot. This is not a complete legal audit or a guarantee of Google Play acceptance.
+
+Rollback: previous production deploy 6a716553488e0105df585373 remains in Netlify history.
