@@ -339,9 +339,9 @@ export function Footer({ company, privacy }: FooterProps) {
 
           <div className="space-y-4 font-sans text-xs text-zinc-400 leading-relaxed">
             <div className="flex items-center justify-between border-2 border-zinc-800 pb-2 bg-zinc-900 p-2 shadow-sm">
-              <span className="font-mono font-bold text-zinc-400">DSGVO-Status:</span>
+              <span className="font-mono font-bold text-zinc-400">Geltungsbereich:</span>
               <span className="bg-emerald-950 border border-emerald-900 text-vibrant-cyan font-mono font-bold px-2 py-0.5 rounded-sm">
-                AKTIV & PASSIV
+                Studio-Website
               </span>
             </div>
 
@@ -355,23 +355,21 @@ export function Footer({ company, privacy }: FooterProps) {
 
             <p>
               <strong className="text-vibrant-cyan uppercase font-mono text-[10px] block mb-1">1. Datenerhebung der Webseite:</strong>
-              {privacy.collectsPersonalData 
-                ? "Bei Kontaktaufnahme (z.B. per E-Mail) werden Ihre Angaben zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen lokal verarbeitet." 
-                : "Dieses Webportal dient rein der passiven Präsentation unseres Studios und des Verzeichnisses unserer Mobile-Anwendungen. Es werden beim Aufrufen dieses Portals keinerlei personenbezogenen Daten von uns erfasst."}
+              Diese Website stellt Gridwerk und seine Produkte vor. Beim Aufruf werden technisch erforderliche Verbindungsdaten wie die IP-Adresse an den Hosting-Anbieter Netlify übertragen. Bei einer Kontaktaufnahme verarbeiten wir die von Ihnen mitgeteilten Angaben zur Bearbeitung Ihrer Anfrage.
             </p>
 
             <p>
               <strong className="text-vibrant-yellow uppercase font-mono text-[10px] block mb-1">2. Cookies und Analyse-Tools:</strong>
-              {privacy.usesCookies 
-                ? "Wir setzen zur Gewährleistung der Barrierefreiheit und Analyse kleine Browser-Cookies ein. Es findet kein Profiling statt." 
-                : "Wir verzichten auf dieser Repräsentationsseite vollständig auf HTTP-Cookies sowie auf Tracking-Tools. Es findet absolut kein Tracking Ihres Surfverhaltens statt."}
+              Im Website-Code sind keine Analyse- oder Werbetracker eingebunden. Die Produktlinks führen zu eigenständigen Angeboten mit eigenen Datenschutzhinweisen.
             </p>
 
             <p>
               <strong className="text-vibrant-red uppercase font-mono text-[10px] block mb-1">3. Google Play Store & Android SDKs:</strong>
-              Die von uns im Google Play Store bereitgestellten mobilen Apps erheben im Regelfall keinerlei verhaltensbezogenen Analysedaten im Hintergrund. Sollte eine App zur Erfüllung ihrer Kernfunktionen systemspezifische Sensortaten oder Standortdienste benötigen, fragen wir dies explizit ab.
+              Die Datenverarbeitung unterscheidet sich je nach Produkt. LEVELMIGHT verarbeitet Konto-, Ernährungs-, Trainings- und Messdaten sowie freiwillige Community-Inhalte auch auf Servern. Die Datenschutzhinweise für LEVELMIGHT sind unten direkt verlinkt; Aussagen zum lokalen Sila-Tresor gelten nicht für LEVELMIGHT.
             </p>
 
+            <p><a className="text-vibrant-cyan underline underline-offset-4" href="https://www.levelmight.de/datenschutz">LEVELMIGHT: vollständige Datenschutzhinweise</a></p>
+            <p><a className="text-vibrant-cyan underline underline-offset-4" href="https://www.levelmight.de/konto-loeschen.html">LEVELMIGHT: Konto und Daten löschen</a></p>
             <div className="pt-2 space-y-2">
               <button
                 type="button"
@@ -420,7 +418,7 @@ export function Footer({ company, privacy }: FooterProps) {
 
             <div className="pt-4 border-t border-zinc-900 text-[10px] text-zinc-550 flex flex-col sm:flex-row justify-between gap-1 select-none">
               <span>Gridwerk © 2026</span>
-              <span className="font-mono text-zinc-500">Google Play Verify Ready</span>
+              <span className="font-mono text-zinc-500">Apps & Webanwendungen aus Wemding</span>
             </div>
           </div>
         </div>
@@ -436,7 +434,7 @@ export function Footer({ company, privacy }: FooterProps) {
                   <Scale className="w-6 h-6 text-vibrant-yellow shrink-0" />
                   Vollständige Datenschutzerklärung (DSGVO)
                 </h4>
-                <p className="text-[10px] sm:text-xs text-zinc-500 font-mono mt-1">Konform mit Art. 13 & 14 DSGVO für Web, Google Play Store & Mobile Apps</p>
+                <p className="text-[10px] sm:text-xs text-zinc-500 font-mono mt-1">Informationen zur Studio-Website; app-spezifische Hinweise separat beachten</p>
               </div>
               <button 
                 type="button"
@@ -483,13 +481,13 @@ export function Footer({ company, privacy }: FooterProps) {
                 </div>
                 <div className="space-y-3 font-sans text-xs text-zinc-400 leading-relaxed">
                   <p>
-                    <strong className="text-white">Server-Logfiles:</strong> Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp/Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und die IP-Adresse.
+                    <strong className="text-white">Hosting durch Netlify / Server-Logfiles:</strong> Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp/Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und die IP-Adresse.
                   </p>
                   <p>
                     Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Stabilitätsoptimierung seiner Website.
                   </p>
                   <p>
-                    <strong className="text-white">Ausschließliche Verweigerung von Tracking & Cookies:</strong> Diese Web-Repräsentanz verzichtet vollständig auf HTTP-Cookies sowie auf Tracking-Tools (wie Google Analytics, Matomo etc.). Es findet absolut kein Tracking Ihres Verhaltens statt.
+                    <strong className="text-white">Website-Funktionen:</strong> Im Website-Code sind keine Werbe- oder Analyse-Tracker eingebunden. Schriften werden über die auf Ihrem Gerät verfügbaren Systemschriften dargestellt. Technisch erforderliche Verbindungen zum Hosting-Anbieter bleiben bestehen.
                   </p>
                   <p>
                     <strong className="text-white">Kontaktaufnahme per E-Mail:</strong> Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben aus der E-Mail inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO).
@@ -538,7 +536,7 @@ export function Footer({ company, privacy }: FooterProps) {
                     Sie haben das gesetzliche Recht auf unentgeltliche <strong>Auskunft (Art. 15 DSGVO)</strong> über Ihre personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf <strong>Berichtigung (Art. 16 DSGVO)</strong>, Sperrung oder <strong>Löschung (Art. 17 DSGVO)</strong> dieser Daten.
                   </p>
                   <p>
-                    Da die App "Macherwerk" keinerlei Daten an uns übermittelt und alle Werte rein lokal hält, können Sie die gespeicherten Einträge jederzeit selbständig und unwiderruflich löschen: Löschen Sie dazu einfach den Speicher bzw. die App-Daten in den Einstellungen Ihres Smartphones oder deinstallieren Sie die App vollständig.
+                    Für LEVELMIGHT nutzen Sie die Kontolöschung in der App oder die verlinkte öffentliche Anleitung. Eine Deinstallation allein löscht das serverseitige LEVELMIGHT-Konto nicht. Für andere Produkte gelten deren eigene Löschhinweise.
                   </p>
                   <p>
                     Sollten Sie der Meinung sein, dass die Verarbeitung Ihrer Daten gegen gesetzliche Vorschriften verstößt, steht Ihnen ein <strong>Beschwerderecht bei einer Aufsichtsbehörde</strong> zu (Art. 77 DSGVO). Die für uns zuständige Landesbehörde ist: <em>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach, Deutschland</em>.
@@ -741,7 +739,7 @@ export function Footer({ company, privacy }: FooterProps) {
                   Google Play Console Vorlage
                 </span>
                 <p className="text-zinc-400 leading-relaxed font-sans text-xs">
-                  Sämtliche Rechtstexte und Store-Kopiervorlagen sind DSGVO-konform strukturiert und erfüllen die Richtlinien von Google Play für Reise- und Grenzhilfe-Apps.
+                  Diese produktbezogenen Texte gelten für SilaGuard. Für LEVELMIGHT beachten Sie die separat verlinkten Hinweise.
                 </p>
               </div>
 

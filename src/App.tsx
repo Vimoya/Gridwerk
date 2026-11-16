@@ -13,6 +13,7 @@ import { defaultCompanyInfo, defaultApps, defaultPrivacyConfig } from './data';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { AppsGrid } from './components/AppsGrid';
+import { Levelmight } from './components/Levelmight';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -26,10 +27,11 @@ export default function App() {
       <Header company={company} />
 
       {/* 2. Visual Hero Grid Box */}
-      <Hero company={company} appCount={apps.length} />
+      <Hero company={company} appCount={apps.length + 1} />
 
       {/* 3. Interactive Web & App Portfolio */}
       <AppsGrid apps={apps} />
+      <Levelmight />
 
       {/* 4. Contact, Impressum & Datenschutz Footer (Play Store compliant) */}
       <Footer company={company} privacy={privacy} />

@@ -24,7 +24,7 @@ export function Hero({ company, appCount }: HeroProps) {
           <div className="flex flex-wrap gap-3 mb-6">
             <div className="inline-flex items-center gap-2 bg-black text-white font-mono text-[10px] sm:text-xs uppercase px-3 py-1.5 font-bold border-2 border-black">
               <Shield className="w-4 h-4 text-vibrant-yellow" id="icon-shield-verified" />
-              <span>Google Play Offizieller Entwickler-Verify</span>
+              <span>Apps aus Wemding</span>
             </div>
             <div className="inline-flex items-center gap-2 bg-white text-black font-mono text-[10px] sm:text-xs uppercase px-3 py-1.5 font-bold border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
               <span className="text-vibrant-red font-bold">●</span>
@@ -63,15 +63,15 @@ export function Hero({ company, appCount }: HeroProps) {
           <div className="mt-12 pt-8 border-t-2 border-black/30 flex flex-col md:flex-row gap-6 md:gap-12 text-xs sm:text-sm text-zinc-950 font-mono">
             <div className="flex items-center gap-2.5 font-bold">
               <CheckCircle2 className="w-5 h-5 text-black shrink-0" id="hero-check-1" />
-              <span>100% Offline-Betrieb & Datensparsamkeit</span>
+              <span>Reise, Ernährung & Training</span>
             </div>
             <div className="flex items-center gap-2.5 font-bold">
               <CheckCircle2 className="w-5 h-5 text-black shrink-0" id="hero-check-2" />
-              <span>Zertifiziert & entwickelt in {company.country}</span>
+              <span>Entwickelt in {company.country}</span>
             </div>
             <div className="flex items-center gap-2.5 font-bold">
               <CheckCircle2 className="w-5 h-5 text-black shrink-0" id="hero-check-3" />
-              <span>Konform mit Google Play Richtlinien</span>
+              <span>Direkter Entwicklerkontakt</span>
             </div>
           </div>
         </div>

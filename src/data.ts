@@ -26,9 +26,9 @@ export const defaultCompanyInfo: CompanyInfo = {
   registerNumber: "",        // If registered, otherwise leave empty or "N/A"
   
   // Vision statement on the Hero Section
-  visionTitle: "Türkei-Reise & Transit. Devisen-Monitore. Maximale Sicherheit.",
-  visionSubtitle: "Gridwerk ist Ihr Partner für professionelle und kostengünstige App-Entwicklung aus Deutschland. Mit unserem aktuellen Highlight 'SilaGuard Pro' bieten wir den unentbehrlichen Begleiter für Reisen in die Türkei und den Balkan-Transit: Devisen- & Zoll-Check, Live Grenz-Cams, KI-Sprachübersetzer und lokaler Sila-Tresor.",
-  description: "Gridwerk ist ein deutsches Softwareentwicklungs-Studio unter der Leitung von Özgür Kilincer. Wir spezialisieren uns auf die kostengünstige Erstellung von datensparsamen High-Performance-Lösungen für Mobilgeräte (Android/iOS) und das Web. Unser Flaggschiff 'SilaGuard' schützt Reisende auf der Sıla Yolu und bei Türkei-Reisen vor Zollstrafen, Wartezeiten und Orientierungsverlust."
+  visionTitle: "Dein Alltag. Deine Reise. Dein Fortschritt.",
+  visionSubtitle: "Gridwerk entwickelt Apps und Webanwendungen aus Wemding. Entdecken Sie SilaGuard als Reisebegleiter und LEVELMIGHT für Ernährung, Training und persönliche Alltagseinträge. LEVELMIGHT ist als Webapp verfügbar; die Android-Veröffentlichung wird vorbereitet.",
+  description: "Gridwerk ist das Softwareentwicklungs-Studio von Özgür Kilincer in Wemding. Zu unseren Projekten gehören SilaGuard und LEVELMIGHT. Funktionen, Verfügbarkeit und Datenschutzhinweise finden Sie jeweils beim einzelnen Produkt."
 };
 
 export const defaultApps: AppInfo[] = [
@@ -59,7 +59,7 @@ export const defaultApps: AppInfo[] = [
 ];
 
 export const defaultPrivacyConfig: PrivacyPolicyConfig = {
-  lastUpdated: "2026",
+  lastUpdated: "16. November 2026",
   collectsPersonalData: false,
   usesCookies: false,
   usesAdmob: false,

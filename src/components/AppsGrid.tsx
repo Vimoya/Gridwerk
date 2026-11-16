@@ -31,7 +31,7 @@ export function AppsGrid({ apps }: AppsGridProps) {
           Produkt-Portfolio
         </span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-black tracking-tight leading-none uppercase">
-          Unsere Apps im Google Play Store
+          Unsere Apps & Webanwendungen
         </h2>
         <div className="h-1 w-32 bg-black mt-4 mb-4"></div>
         <p className="font-sans text-zinc-800 text-sm sm:text-base max-w-2xl leading-relaxed">
@@ -125,7 +125,7 @@ export function AppsGrid({ apps }: AppsGridProps) {
                   <div id={`features-panel-${app.id}`} className="mb-4 bg-white border-2 border-black p-3 shadow-sm">
                     <p className="text-[10px] font-mono font-bold uppercase text-zinc-900 mb-2 border-b border-black/20 pb-1 flex items-center gap-1">
                       <ShieldCheck className="w-3.5 h-3.5 text-vibrant-red" id={`feature-shield-${app.id}`} />
-                      Zertifiziertes Feature-Verzeichnis
+                      Funktionen im Überblick
                     </p>
                     <ul className="list-disc list-inside space-y-1.5 text-xs text-zinc-950 font-sans font-bold">
                       {app.features.map((feat, i) => (
